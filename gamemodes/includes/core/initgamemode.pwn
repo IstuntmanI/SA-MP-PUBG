@@ -18,7 +18,7 @@ InitiateGamemode()
 
 	print("\n-------------------------------------------");
 	print("War Of Banish");
-	print("Gamemode by Akatah");
+	print("Gamemode by Aktah");
 	print("-------------------------------------------\n");
 	print("Successfully initiated the gamemode...");
 }

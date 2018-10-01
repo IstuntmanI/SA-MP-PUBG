@@ -63,7 +63,7 @@ enum E_MATCHING_DATA {
 };
 
 new MatchingInfo[MAX_MATCHINGINFO][E_MATCHING_DATA];
-/*
+
 new const CircleData[][8] = { // Start Shrink , Size, Blue meet white
 	{100,1500,100},
 	{65,990,45},
@@ -74,8 +74,8 @@ new const CircleData[][8] = { // Start Shrink , Size, Blue meet white
 	{30,30,10},   
 	{20,10,10}
 };
-*/
-
+/*
+//Fast shrink
 new const CircleData[][8] = { // Start Shrink , Size, Blue meet white
 	{5,1200,5},
 	{300,990,45},
@@ -85,7 +85,7 @@ new const CircleData[][8] = { // Start Shrink , Size, Blue meet white
 	{30,60,10},   
 	{30,30,10},   
 	{20,10,10}
-};
+};*/
 
 /*
 new const CircleData[][8] = { // Start Shrink , Size, Blue meet white
