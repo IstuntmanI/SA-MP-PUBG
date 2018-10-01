@@ -6,8 +6,6 @@
 	5 damage = 1 point
 	1 Rank = 
 	
-	720
-	
 	Solo rank Time * 1.2
 	Duo rank Time * 0.6
 	Squad rank Time * 0.3
