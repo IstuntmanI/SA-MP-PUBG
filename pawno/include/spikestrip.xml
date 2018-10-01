@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet href="file:///D|/Cloud/Dropbox/Ak-kawit Team Folder/GTA/SA-MP LS-RP.th Project/pawno/xml/pawndoc.xsl" type="text/xsl"?>
+<doc source="spikestrip.inc">
+	<assembly>
+		<name>spikestrip.inc</name>
+	</assembly>
+	<members>
+
+		<!-- enumerations -->
+
+		<!-- constants -->
+
+		<!-- variables -->
+
+		<!-- functions -->
+		<member name="M:CallRemoteFunction" syntax="CallRemoteFunction()">
+			<stacksize value="1"/>
+			<referrer name="SpikeStrip_Create"/>
+			<referrer name="SpikeStrip_Delete"/>
+			<referrer name="SpikeStrip_DeleteAll"/>
+			<referrer name="SpikeStrip_IsValid"/>
+			<referrer name="SpikeStrip_SetGhost"/>
+			<referrer name="SpikeStrip_IsGhost"/>
+		</member>
+		<member name="M:OnSpikeStripPopTire" syntax="OnSpikeStripPopTire(spikeid, vehicleid, playerid, tire)">
+			<stacksize value="1"/>
+			<param name="spikeid">
+			</param>
+			<param name="vehicleid">
+			</param>
+			<param name="playerid">
+			</param>
+			<param name="tire">
+			</param>
+		</member>
+		<member name="M:SpikeStrip_Create" syntax="SpikeStrip_Create(mid, x, y, z, a)">
+			<stacksize value="10"/>
+			<dependency name="CallRemoteFunction"/>
+			<param name="mid">
+			</param>
+			<param name="x">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="y">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="z">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="a">
+				<paraminfo>Float </paraminfo>
+			</param>
+		</member>
+		<member name="M:SpikeStrip_Delete" syntax="SpikeStrip_Delete(sid)">
+			<stacksize value="6"/>
+			<dependency name="CallRemoteFunction"/>
+			<param name="sid">
+			</param>
+		</member>
+		<member name="M:SpikeStrip_DeleteAll" syntax="SpikeStrip_DeleteAll()">
+			<stacksize value="5"/>
+			<dependency name="CallRemoteFunction"/>
+		</member>
+		<member name="M:SpikeStrip_IsGhost" syntax="SpikeStrip_IsGhost(pid)">
+			<stacksize value="6"/>
+			<dependency name="CallRemoteFunction"/>
+			<param name="pid">
+			</param>
+		</member>
+		<member name="M:SpikeStrip_IsValid" syntax="SpikeStrip_IsValid(sid)">
+			<stacksize value="6"/>
+			<dependency name="CallRemoteFunction"/>
+			<param name="sid">
+			</param>
+		</member>
+		<member name="M:SpikeStrip_SetGhost" syntax="SpikeStrip_SetGhost(pid, toggle)">
+			<stacksize value="7"/>
+			<dependency name="CallRemoteFunction"/>
+			<param name="pid">
+			</param>
+			<param name="toggle">
+				<paraminfo>bool </paraminfo>
+			</param>
+		</member>
+
+	</members>
+</doc>

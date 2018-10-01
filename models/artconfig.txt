@@ -1,0 +1,2 @@
+AddSimpleModel(-1,19379, -2001, "textdraw_object.dff", "runing_pin.txd");
+AddSimpleModel(-1,19379, -2002, "textdraw_object.dff", "map_guide.txd");

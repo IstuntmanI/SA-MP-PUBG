@@ -1,0 +1,119 @@
+			new ipaddress[16];
+			GetPlayerIp(extraid,ipaddress,sizeof(ipaddress));
+			MySQLAddLoginRecord(PlayerData[extraid][pSQLID], ipaddress);
+			PlayerData[extraid][pAdjustable] = 0;
+			SafeResetPlayerMoney(extraid);
+			ConsumingMoney[extraid] = 1;
+			SafeGivePlayerMoney(extraid,PlayerData[extraid][pCash]);
+			CurrentMoney[extraid] = PlayerData[extraid][pCash];
+			if(PlayerData[extraid][pReg] == 0)
+			{
+				PlayerData[extraid][pLevel] = 1;
+				PlayerData[extraid][pFull] = 1000;
+				PlayerData[extraid][pRobbank] = 0;
+				PlayerData[extraid][pDie] = 0;
+				PlayerData[extraid][pSHealth] = 0.0;
+				PlayerData[extraid][pHealth] = 50.0;
+				PlayerData[extraid][pPos_x] = -2461.9802;
+				PlayerData[extraid][pPos_y] = 133.1998;
+				PlayerData[extraid][pPos_z] = 35.1719;
+				PlayerData[extraid][pInt] = 15;
+				PlayerData[extraid][pLocal] = 255;
+				PlayerData[extraid][pTeam] = 3;
+				PlayerData[extraid][pModel] = 264;
+				PlayerData[extraid][pPnumber] = 0;
+				PlayerData[extraid][pPhousekey] = 255;
+				PlayerData[extraid][pPbiskey] = 255;
+				PlayerData[extraid][pPcarkey] = 999;
+				PlayerData[extraid][pPcarkey2] = 999;
+				PlayerData[extraid][pPcarkey3] = 999;
+				PlayerData[extraid][pCrash] = 0;
+				PlayerData[extraid][pAccount] = 25000;
+				PlayerData[extraid][pReg] = 1;
+				PlayerData[extraid][pWalkieFreq] = 0;
+				PlayerData[extraid][pWalkie] = 0;
+				PlayerData[extraid][pBanned] = 0;
+				PlayerData[extraid][pSpawn] = 0;
+				PlayerData[extraid][pGate] = 0;
+				PlayerData[extraid][pLighter] = 0;
+				PlayerData[extraid][pCigarettes] = 0;
+				PlayerData[extraid][pPray] = 0;
+				PlayerData[extraid][pIdcard] = 0;
+				PlayerData[extraid][pIdcardvalid] = 0;
+				PlayerData[extraid][pDonateTime] = 0;
+				PlayerData[extraid][pLawyerTime] = 0;
+				PlayerData[extraid][pPoint] = 0;
+				SafeGivePlayerMoney(extraid, 10000);
+			}
+			if(PlayerData[extraid][pBanned] == 1) //autoban
+			{
+				SendClientMessage(extraid, 0xFF0000FF, "Server: Account ¹Õé¶Ù¡áº¹... ¡ÃØ³Òá¨é§ Admins à¾×èÍãËé»Å´áº¹ !");
+				Kick(extraid);
+				return 1;
+			}
+			else if(PlayerData[extraid][pCK] > 0)
+			{
+			    Kick(extraid);
+			}
+			format(string2, sizeof(string2), "Server: ÊÇÑÊ´Õ¤Ø³ %s",playername2);
+			SendClientMessage(extraid, 0xFFFFFFFF,string2);
+			printf("%s has logged in.",playername2);
+			if (PlayerData[extraid][pDonateRank] >= 1)
+			{
+				SendClientMessage(extraid, COLOR_WHITE,"Server: ¤Ø³à»ç¹¼ÙéºÃÔ¨Ò¤ÃÐ´Ñº Vip Account");
+			}
+			if (PlayerData[extraid][pAdminLevel] > 0)
+			{
+				format(string2, sizeof(string2), "Server: ¤Ø³ÅçÍ¡ÍÔ¹â´Âà»ç¹ Admin àÅàÇÅ %d",PlayerData[extraid][pAdminLevel]);
+				SendClientMessage(extraid, COLOR_WHITE,string2);
+			}
+			for(new i = 0; i < CAR_AMOUNT; i++)
+			{
+				SetVehicleParamsForPlayer(i,extraid,0,VehicleLock[i]);
+			}
+			if(gTeam[extraid] == 0)
+			{
+				gTeam[extraid] = 3;
+			}
+			else
+			{
+				gTeam[extraid] = PlayerData[extraid][pTeam];
+			}
+			gPlayerLogged[extraid] = 1;
+			SetTimerEx("SpawnTimer", 2000, false, "i", extraid);
+			format(tmp2, sizeof(tmp2), "~w~Welcome ~n~~y~   %s", playername2);
+			DateProp(extraid);
+			GameTextForPlayer(extraid, tmp2, 5000, 1);
+			if(PlayerData[extraid][pFMember] < 255)
+			{
+			    format(tmp2, sizeof(tmp2), "Family MOTD: %s.", FamilyInfo[PlayerData[extraid][pFMember]][FamilyMOTD]);
+			    SendClientMessage(extraid, COLOR_YELLOW, tmp2);
+			}
+			if(multiexp > 1)
+			{
+			    format(tmp2, sizeof(tmp2), "Payday: ¢³Ð¹Õé¤èÒ»ÃÐÊº¡ÒÃ³ì (EXP) ·Õèä´éÃÑº¤Ù³´éÇÂ %d", multiexp);
+			    SendClientMessage(extraid, COLOR_LIGHTGREEN, tmp2);
+			}
+			if(IsCashboxStarted == 1)
+			{
+				SendClientMessage(extraid, COLOR_LIGHTGREEN,"Server: ÍÂÙèã¹ªèÇ§àÇÅÒ Cashbox MiniGame !");
+			}
+			if(PlayerData[extraid][pCarLic] == 0)
+			{
+				SendClientMessage(extraid, COLOR_LIGHTBLUE,"License: ãº¢Ñº¢ÕÊÒÁÒÃ¶ÊÍºä´éàÅÂáÅéÇ¹Ð¤ÃÑº äÁèµéÍ§¿Ñ§º·àÃÕÂ¹ µÍº¤Ó¶ÒÁä´éàÅÂ !");
+			}
+			new keycar = PlayerData[extraid][pPcarkey];
+			new keycar2 = PlayerData[extraid][pPcarkey2];
+			new keycar3 = PlayerData[extraid][pPcarkey3];
+			if(keycar != 999)
+			{
+				GetCar(extraid);
+			}
+			if(keycar2 != 999)
+			{
+				GetCar2(extraid);
+			}
+			if(keycar3 != 999)
+			{
+				GetCar3(extraid);
+			}
