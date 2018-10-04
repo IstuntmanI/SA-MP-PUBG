@@ -1,11 +1,11 @@
 /*
 	War Of Banish
-		gamemode by Aktah (àÍ¡ÇÔ·Âì µÒáÎ)
-	
+		gamemode by Aktah (ï¿½Í¡ï¿½Ô·ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
+
 	1 Kill = 20/15/10 point solo/duo/squard
 	5 damage = 1 point
-	1 Rank = 
-	
+	1 Rank =
+
 	Solo rank Time * 1.2
 	Duo rank Time * 0.6
 	Squad rank Time * 0.3
@@ -42,11 +42,9 @@
 #include <GZ_ShapesALS>
 #include <YSI\y_hooks>
 #include <YSI\y_timers>
-//#include <nex-ac>
 #include <memory>
 #include <colandreas>
 #include <easyDialog>
-//#include <PreviewModelDialog>
 /*=======================================================================================================
 										[Modules]
 =======================================================================================================*/
@@ -67,7 +65,6 @@
 
 // Core
 #include "./includes/core/initgamemode.pwn"
-//#include "./includes/core/compass.pwn"
 
 // Main
 #include "./includes/main/party.pwn"
@@ -111,13 +108,11 @@ OnGameModeInitEx()
 {
 	print("Preparing the gamemode, please wait...");
 	InitiateGamemode();
-	//g_mysql_Init(); // not need yet
 }
 
 public OnGameModeExit()
 {
 	print("Exiting the gamemode, please wait...");
-    //g_mysql_Exit();// not need yet
 	return 1;
 }
 
