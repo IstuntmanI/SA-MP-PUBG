@@ -239,7 +239,7 @@ CMD:car(playerid) {
 
 CMD:help(playerid) {
 	SendClientMessage(playerid, -1, "[HELP] /partyhelp, /gamehelp");
-	SendClientMessage(playerid, COLOR_YELLOW, "*** เซิร์ฟเวอร์ยังอยู่ในการพัฒนาท่านสามารถแนะนำ หรือรายงานบัคต่าง ๆ ให้เราได้ที่นี่ SA-MP War of Banish");
+	SendClientMessage(playerid, COLOR_YELLOW, "*** เซิร์ฟเวอร์ยังอยู่ในการพัฒนาท่านสามารถแนะนำ หรือรายงานบัคต่าง ๆ ให้เราได้ที่นี่ SA-MP SA-MP-PUBG");
 	return 1;
 }
 

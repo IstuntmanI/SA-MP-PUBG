@@ -18,7 +18,7 @@ InitiateGamemode()
 	AntiDeAMX();
 
 	print("\n-------------------------------------------");
-	print("War Of Banish");
+	print("SA-MP-PUBG");
 	print("Gamemode by SarapoaJunG");
 	print("-------------------------------------------\n");
 	print("Successfully initiated the gamemode...");

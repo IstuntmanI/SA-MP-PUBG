@@ -1,5 +1,5 @@
 /*
-	War Of Banish
+	SA-MP-PUBG
 		gamemode by Aktah (�͡�Է�� ����)
 
 	1 Kill = 20/15/10 point solo/duo/squard
@@ -86,8 +86,8 @@ public OnGameModeInit()
 {
 	OnGameModeInitEx();
 
-	#if defined WOB_OnGameModeInit
-		return WOB_OnGameModeInit();
+	#if defined SAMP_PUBGOnGameModeInit
+		return SAMP_PUBGOnGameModeInit();
 	#else
 		return 1;
 	#endif
@@ -99,9 +99,9 @@ public OnGameModeInit()
 	#define _ALS_OnGameModeInit
 #endif
 
-#define OnGameModeInit WOB_OnGameModeInit
-#if defined WOB_OnGameModeInit
-	forward WOB_OnGameModeInit();
+#define OnGameModeInit SAMP_PUBGOnGameModeInit
+#if defined SAMP_PUBGOnGameModeInit
+	forward SAMP_PUBGOnGameModeInit();
 #endif
 
 OnGameModeInitEx()
