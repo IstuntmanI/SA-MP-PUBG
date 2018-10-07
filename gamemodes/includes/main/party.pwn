@@ -77,59 +77,6 @@ Party_CountMember(partyid) {
 	}
 	return count;
 }
-/*
-Party_IsAllDead(partyid) {
-	new count, dead;
-	if(partyid != NO_PARTY) {
-		for (new x; x != MAX_PARTY_MEMBER; x++)
-		{
-			if(PartyInfo[partyid][pMember][x] != INVALID_PLAYER_ID) {
-				count++;
-				if(IsPlayerDeath(PartyInfo[partyid][pMember][x])) {
-					dead++;
-				}
-			}
-		}
-	}
-	return count == dead;
-}*/
-
-/*
-Party_AliveCount(matchingid) {
-	new count;
-	
-	foreach(new x : Player) {
-		if(PlayerJoined[x] == matchingid && PlayerParty[x] == NO_PARTY && !IsPlayerDeath(x)) {
-			count++;
-		}
-	}
-	
-	for(new i=0;i!=MAX_PARTIES;i++) {
-		if(PartyInfo[i][pExists] && PartyInfo[i][pJoined] == matchingid) {
-			for(new x=0;x!=MAX_PARTY_MEMBER;x++) {
-				if(PartyInfo[i][pMember][x] != INVALID_PLAYER_ID && !IsPlayerDeath(PartyInfo[i][pMember][x])) {
-					count++;
-					break;
-				}
-			}
-		}
-	}
-	return count;
-}*/
-
-/*
-Party_GetLastPartyInMatching(matchingid) {
-	for(new i=0;i!=MAX_PARTIES;i++) {
-		if(PartyInfo[i][pExists] && PartyInfo[i][pJoined] == matchingid) {
-			if(PartyInfo[partyid][pMember][x] != INVALID_PLAYER_ID && !IsPlayerDeath(PartyInfo[partyid][pMember][x])) {
-				return i;
-			}
-		}
-	}
-	return -1;
-}
-*/
-
 
 Party_CountReady(partyid) {
 	new count;
@@ -284,8 +231,8 @@ CMD:invite(playerid, params[])
 	PartyOffer[targetid] = playerid;
     PartyOffered[targetid] = PlayerParty[playerid];
 
-    SendClientMessageEx(playerid, COLOR_YELLOW3, "   ¤Ø³ä´éàªÔ­ %s ãËéà¢éÒÃèÇÁ»ÒÃìµÕé",  ReturnName(targetid));
-    SendClientMessageEx(targetid, COLOR_YELLOW3, "   %s ä´éªÇ¹ãËé¤Ø³à¢éÒÃèÇÁ»ÒÃìµÕé (ãªé \"/partyaccept\")", ReturnName(playerid));
+    SendClientMessageEx(playerid, COLOR_YELLOW3, "   ï¿½Ø³ï¿½ï¿½ï¿½Ô­ %s ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",  ReturnName(targetid));
+    SendClientMessageEx(targetid, COLOR_YELLOW3, "   %s ï¿½ï¿½Ç¹ï¿½ï¿½ï¿½Ø³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ \"/partyaccept\")", ReturnName(playerid));
 
 	/*if(PlayerParty[playerid]==NO_PARTY) {
 		partyid = Party_Create(playerid, targetid);

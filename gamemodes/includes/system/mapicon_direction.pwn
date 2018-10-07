@@ -18,12 +18,13 @@ hook OnPlayerUpdate(playerid) {
 Float:GetAngleZFromPoints(Float:x1, Float:y1, Float:x2, Float:y2) { 
     return (180.0 - atan2(x1-x2, y1-y2)); 
 }
-/*
+// Test code
+/* 
 CMD:updatemap(playerid) {
 	CreateDirection(playerid);
 	return 1;
 }
-*/
+
 CMD:gotowhite(playerid) {
 	new matchingid = PlayerJoined[playerid];
 	if(matchingid != -1 && MatchingInfo[matchingid][m_WRad]) {
@@ -57,7 +58,7 @@ CMD:gotoblue(playerid) {
 	}
 	return 1;
 }
-
+*/
 
 CreateDirection(playerid) {
 
