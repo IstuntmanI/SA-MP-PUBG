@@ -58,15 +58,15 @@ ReturnReasonName(weaponid)
 		name[24];
 		
 	if(weaponid == DEATH_PLAYZONE) {
-		name = "เขตการเล่น";
+		name = "เขตการเล่น"; // Playzone
 		return name;
 	}
 	else if(weaponid == 54) {
-		name = "ตกจากที่สูง";
+		name = "ตกจากที่สูง"; // Falling
 		return name;
 	}
 	else if(weaponid == 49) {
-		name = "ยานพาหนะระเบิด";
+		name = "ยานพาหนะระเบิด"; // Vehicle explosion
 		return name;
 	}
 
@@ -177,15 +177,7 @@ stock ConvertTime(&cts, &ctm=-1,&cth=-1,&ctd=-1,&ctw=-1,&ctmo=-1,&cty=-1)
 }
 
 CreateRGB(r, g, b, a) return (r<<24 | g<<16 | b<<8 | a);
-/*
-Float:GetDistanceBetweenPoints3D(Float:x1,Float:y1,Float:z1,Float:x2,Float:y2,Float:z2){
-    return VectorSize(x1-x2,y1-y2,z1-z2);
-}*/
-/*
-Float:GetDistance(Float:x1,Float:y1,Float:z1, Float:x2,Float:y2,Float:z2)
-{
-	return floatsqroot(floatpower(floatabs(floatsub(x2,x1)),2)+floatpower(floatabs(floatsub(y2,y1)),2)+floatpower(floatabs(floatsub(z2,z1)),2));
-}*/
+
 Float:GetDistance(Float:x1,Float:y1,Float:z1, Float:x2,Float:y2,Float:z2)
 {
 	return floatsqroot(floatpower(floatabs(floatsub(x2,x1)),2)+floatpower(floatabs(floatsub(y2,y1)),2)+floatpower(floatabs(floatsub(z2,z1)),2));
