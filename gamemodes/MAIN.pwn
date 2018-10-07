@@ -74,6 +74,8 @@
 #include "./includes/main/gameplay_ui.pwn"
 
 #include "./includes/system/mapicon_direction.pwn"
+
+#include "./includes/system/inventory.pwn"
 /*
 #include "./includes/main/matchmaking.pwn"
 #include "./includes/main/inventory.pwn"

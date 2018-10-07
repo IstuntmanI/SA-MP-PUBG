@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<?xml-stylesheet href="file:///D|/Dropbox/Ak-kawit Team Folder/GTA/SA-MP-PUBG/pawno/xml/pawndoc.xsl" type="text/xsl"?>
-<doc source="D:\Dropbox\Ak-kawit Team Folder\GTA\SA-MP-PUBG\gamemodes\MAIN.pwn">
+<?xml-stylesheet href="file:///D|/Project/SA-MP-PUBG/pawno/xml/pawndoc.xsl" type="text/xsl"?>
+<doc source="D:\Project\SA-MP-PUBG\gamemodes\MAIN.pwn">
 	<assembly>
 		<name>MAIN.pwn</name>
 	</assembly>
@@ -305,6 +305,35 @@
 				<size value="3"/>
 			</member>
 		</member>
+		<member name="T:E_ITEM" value="73">
+			<tagname value="E_ITEM"/>
+			<member name="C:E_ITEM_VALID" value="0">
+				<tagname value="bool"/>
+			</member>
+			<member name="C:E_ITEM_NAME" value="1">
+				<size value="64"/>
+			</member>
+			<member name="C:E_ITEM_OBJECTID" value="65">
+			</member>
+			<member name="C:E_ITEM_ROTX" value="66">
+				<tagname value="Float"/>
+			</member>
+			<member name="C:E_ITEM_ROTY" value="67">
+				<tagname value="Float"/>
+			</member>
+			<member name="C:E_ITEM_ROTZ" value="68">
+				<tagname value="Float"/>
+			</member>
+			<member name="C:E_ITEM_ZPUSH" value="69">
+				<tagname value="Float"/>
+			</member>
+			<member name="C:E_ITEM_PLAYERID" value="70">
+			</member>
+			<member name="C:E_ITEM_AREAID" value="71">
+			</member>
+			<member name="C:E_ITEM_MODELID" value="72">
+			</member>
+		</member>
 		<member name="T:E_LOBBY_TEXTDRAW" value="7">
 			<tagname value="E_LOBBY_TEXTDRAW"/>
 			<member name="C:E_LOBBY_START" value="0">
@@ -375,6 +404,41 @@
 			<member name="C:m_Pilot" value="227">
 			</member>
 			<member name="C:m_Plane" value="228">
+			</member>
+		</member>
+		<member name="T:E_MENU_TEXTDRAW" value="67">
+			<tagname value="E_MENU_TEXTDRAW"/>
+			<member name="C:E_MENU_TEXTDRAW_SCROLL_UP" value="0">
+			</member>
+			<member name="C:E_MENU_TEXTDRAW_SCROLL_DOWN" value="1">
+			</member>
+			<member name="C:E_MENU_TEXTDRAW_SCROLL" value="2">
+			</member>
+			<member name="C:E_MENU_TEXTDRAW_LEFT_BOX" value="3">
+				<size value="10"/>
+			</member>
+			<member name="C:E_MENU_TEXTDRAW_LEFT_MODEL" value="13">
+				<size value="10"/>
+			</member>
+			<member name="C:E_MENU_TEXTDRAW_LEFT_TEXT" value="23">
+				<size value="10"/>
+			</member>
+			<member name="C:E_MENU_TEXTDRAW_RIGHT_MODEL" value="33">
+				<size value="10"/>
+			</member>
+			<member name="C:E_MENU_TEXTDRAW_RIGHT_BOX" value="43">
+				<size value="10"/>
+			</member>
+			<member name="C:E_MENU_TEXTDRAW_RIGHT_TEXT" value="53">
+				<size value="10"/>
+			</member>
+			<member name="C:E_MENU_TEXTDRAW_LEFTBTN" value="63">
+			</member>
+			<member name="C:E_MENU_TEXTDRAW_RIGHTBTN" value="64">
+			</member>
+			<member name="C:E_MENU_TEXTDRAW_MIDDLEBTN" value="65">
+			</member>
+			<member name="C:E_MENU_TEXTDRAW_CLOSE" value="66">
 			</member>
 		</member>
 		<member name="T:E_PARTY_BOX_TEXTDRAW" value="8">
@@ -510,6 +574,18 @@
 		<member name="C:E_STREAMER_Y" value="47">
 			<referrer name="MatchingInfoTimer"/>
 		</member>
+		<member name="C:FONT" value="1">
+			<referrer name="@yH_GameModeInit9"/>
+			<referrer name="@yH_PlayerConnect9"/>
+		</member>
+		<member name="C:MAX_PLAYER_ITEMS" value="10">
+			<referrer name="Inv_UpdateRightMenu"/>
+			<referrer name="Inv_GivePlayerItem"/>
+		</member>
+		<member name="C:SELECTED" value="1616928955">
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="Inv_UpdateRightMenu"/>
+		</member>
 		<member name="C:STATE_BLUE" value="3">
 			<referrer name="MatchingInfoTimer"/>
 			<referrer name="UpdatePlayerCircleShift"/>
@@ -610,6 +686,11 @@
 			<referrer name="DestroyPlayerCircleShift"/>
 			<referrer name="@yH_PlayerConnect8"/>
 			<referrer name="CreateDirection"/>
+			<referrer name="Inv_RemoveItem"/>
+			<referrer name="Inv_Show"/>
+			<referrer name="Inv_Hide"/>
+			<referrer name="Inv_RemoveAllItems"/>
+			<referrer name="@yH_PlayerDisconnect9"/>
 		</member>
 		<member name="C:true" value="1">
 			<tagname value="bool"/>
@@ -666,6 +747,11 @@
 			<referrer name="ShowPlayerCircleShift"/>
 			<referrer name="UpdatePlayerCircleShift"/>
 			<referrer name="CreateDirection"/>
+			<referrer name="Inv_AddItem"/>
+			<referrer name="Inv_Show"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="@yH_GameModeInit9"/>
+			<referrer name="@yH_PlayerConnect9"/>
 		</member>
 
 		<!-- variables -->
@@ -956,8 +1042,6 @@
 			<referrer name="FCNPC_OnReachDestination"/>
 			<referrer name="UpdatePlayerMap"/>
 			<referrer name="UpdatePlayerCircleShift"/>
-			<referrer name="cmd_gotowhite"/>
-			<referrer name="cmd_gotoblue"/>
 			<referrer name="CreateDirection"/>
 		</member>
 		<member name="F:Motorcycle">
@@ -1080,9 +1164,8 @@
 			<referrer name="cmd_map"/>
 			<referrer name="UpdatePlayerMap"/>
 			<referrer name="UpdatePlayerCircleShift"/>
-			<referrer name="cmd_gotowhite"/>
-			<referrer name="cmd_gotoblue"/>
 			<referrer name="CreateDirection"/>
+			<referrer name="S@@_OnPlayerKeyStateChange"/>
 		</member>
 		<member name="F:PlayerKill">
 			<referrer name="@yH_PlayerConnect6"/>
@@ -1462,6 +1545,13 @@
 		<member name="F:circleshiftPlayerTextDrawID">
 			<referrer name="UpdatePlayerCircleShift"/>
 		</member>
+		<member name="F:createdItems">
+			<referrer name="dialog_CREATED_ITEMS"/>
+			<referrer name="cmd_newitem"/>
+		</member>
+		<member name="F:createdItemsCount">
+			<referrer name="cmd_newitem"/>
+		</member>
 		<member name="F:dbCon">
 			<tagname value="MySQL"/>
 			<referrer name="g_mysql_Init"/>
@@ -1547,6 +1637,29 @@
 			<referrer name="SSCANF_OnFilterScriptInit"/>
 			<referrer name="fcnpc1_OnGameModeInit"/>
 		</member>
+		<member name="F:item">
+			<referrer name="Inv_AddItem"/>
+			<referrer name="Inv_RemoveItem"/>
+			<referrer name="Inv_EditItem"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="Inv_UpdateRightMenu"/>
+			<referrer name="Inv_GivePlayerItem"/>
+			<referrer name="Inv_DropPlayerItem"/>
+			<referrer name="Inv_RemoveAllItems"/>
+			<referrer name="@yH_PlayerClickTextDraw9"/>
+			<referrer name="Inv_UpdatePlaiyerPickupTextDraw"/>
+			<referrer name="@yH_PlayerEditDynamicObject9"/>
+			<referrer name="dialog_CREATED_ITEMS"/>
+		</member>
+		<member name="F:itemPoolSize">
+			<referrer name="Inv_AddItem"/>
+			<referrer name="Inv_RemoveItem"/>
+			<referrer name="Inv_EditItem"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="Inv_RemoveAllItems"/>
+			<referrer name="Inv_UpdatePlaiyerPickupTextDraw"/>
+			<referrer name="@yH_PlayerEditDynamicObject9"/>
+		</member>
 		<member name="F:lobbyTextDraw">
 			<tagname value="Text"/>
 			<referrer name="@yH_GameModeInit4"/>
@@ -1580,6 +1693,58 @@
 			<referrer name="@yH_GameModeInit7"/>
 			<referrer name="@yH_GameModeExit7"/>
 		</member>
+		<member name="F:menuPlayerTextDraw">
+			<tagname value="PlayerText"/>
+			<referrer name="Inv_Show"/>
+			<referrer name="Inv_Hide"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="Inv_UpdateRightMenu"/>
+			<referrer name="@yH_PlayerConnect9"/>
+			<referrer name="@yH_PlayerDisconnect9"/>
+		</member>
+		<member name="F:menuPlayerTextDrawCount">
+			<referrer name="Inv_Show"/>
+			<referrer name="Inv_Hide"/>
+			<referrer name="@yH_PlayerConnect9"/>
+			<referrer name="@yH_PlayerDisconnect9"/>
+		</member>
+		<member name="F:menuPlayerTextDrawID">
+			<referrer name="Inv_Show"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="Inv_UpdateRightMenu"/>
+			<referrer name="@yH_PlayerConnect9"/>
+		</member>
+		<member name="F:menuTextDraw">
+			<tagname value="Text"/>
+			<referrer name="Inv_Show"/>
+			<referrer name="Inv_Hide"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="Inv_UpdateRightMenu"/>
+			<referrer name="@yH_GameModeInit9"/>
+			<referrer name="@yH_GameModeExit9"/>
+			<referrer name="@yH_PlayerClickTextDraw9"/>
+		</member>
+		<member name="F:menuTextDrawCount">
+			<referrer name="Inv_Show"/>
+			<referrer name="Inv_Hide"/>
+			<referrer name="@yH_GameModeInit9"/>
+			<referrer name="@yH_GameModeExit9"/>
+		</member>
+		<member name="F:menuTextDrawID">
+			<referrer name="Inv_Show"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="Inv_UpdateRightMenu"/>
+			<referrer name="@yH_GameModeInit9"/>
+			<referrer name="@yH_PlayerClickTextDraw9"/>
+		</member>
+		<member name="F:nearbyItems">
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="@yH_PlayerClickTextDraw9"/>
+		</member>
+		<member name="F:nearbyItemsCount">
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="@yH_PlayerClickTextDraw9"/>
+		</member>
 		<member name="F:partyBoxPlayerTextDraw">
 			<tagname value="PlayerText"/>
 			<referrer name="UpdatePlayerPartyBox"/>
@@ -1602,6 +1767,48 @@
 		<member name="F:partyBoxTextDrawID">
 			<referrer name="@yH_GameModeInit7"/>
 			<referrer name="UpdatePlayerPartyBox"/>
+		</member>
+		<member name="F:playerInventoryItems">
+			<referrer name="Inv_RemoveItem"/>
+			<referrer name="Inv_UpdateRightMenu"/>
+			<referrer name="Inv_GivePlayerItem"/>
+			<referrer name="Inv_DropPlayerItem"/>
+			<referrer name="@yH_PlayerClickTextDraw9"/>
+		</member>
+		<member name="F:playerInventoryItemsCount">
+			<referrer name="Inv_RemoveItem"/>
+			<referrer name="Inv_UpdateRightMenu"/>
+			<referrer name="Inv_GivePlayerItem"/>
+			<referrer name="Inv_DropPlayerItem"/>
+			<referrer name="Inv_RemoveAllItems"/>
+			<referrer name="@yH_PlayerConnect9"/>
+			<referrer name="@yH_PlayerClickTextDraw9"/>
+		</member>
+		<member name="F:playerItemPickupTextDraw">
+			<tagname value="PlayerText"/>
+			<referrer name="@yH_PlayerConnect9"/>
+			<referrer name="Inv_UpdatePlaiyerPickupTextDraw"/>
+		</member>
+		<member name="F:playerLeftMenuClickTickCount">
+			<referrer name="@yH_PlayerClickTextDraw9"/>
+		</member>
+		<member name="F:playerLeftMenuListitem">
+			<referrer name="Inv_Show"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="@yH_PlayerClickTextDraw9"/>
+		</member>
+		<member name="F:playerLeftMenuPage">
+			<referrer name="Inv_Show"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="@yH_PlayerClickTextDraw9"/>
+		</member>
+		<member name="F:playerRightMenuClickTickCount">
+			<referrer name="@yH_PlayerClickTextDraw9"/>
+		</member>
+		<member name="F:playerRightMenuListitem">
+			<referrer name="Inv_Show"/>
+			<referrer name="Inv_UpdateRightMenu"/>
+			<referrer name="@yH_PlayerClickTextDraw9"/>
 		</member>
 		<member name="F:playerTextDrawFader">
 			<referrer name="PlayerTextDrawFadeBox"/>
@@ -1634,6 +1841,18 @@
 			<referrer name="UpdatePlayerPartyBox"/>
 			<referrer name="UpdatePlayerCircleShift"/>
 			<referrer name="IsPlayerOpenMap"/>
+		</member>
+		<member name="F:playerUsingMenu">
+			<tagname value="bool"/>
+			<referrer name="Inv_RemoveItem"/>
+			<referrer name="Inv_Show"/>
+			<referrer name="Inv_Hide"/>
+			<referrer name="Inv_GivePlayerItem"/>
+			<referrer name="Inv_DropPlayerItem"/>
+			<referrer name="Inv_RemoveAllItems"/>
+			<referrer name="@yH_PlayerDisconnect9"/>
+			<referrer name="@yH_PlayerClickTextDraw9"/>
+			<referrer name="@yH_PlayerDeath9"/>
 		</member>
 		<member name="F:playerUsingPartyBox">
 			<tagname value="bool"/>
@@ -1855,6 +2074,7 @@
 			<stacksize value="4"/>
 			<referrer name="MatchingInfoTimer"/>
 			<referrer name="UpdatePlayerMap"/>
+			<referrer name="ScrollBar"/>
 			<dependency name="float"/>
 			<dependency name="floatdiv"/>
 			<param name="oper1">
@@ -1869,6 +2089,9 @@
 			<referrer name="CA_IsPlayerNearWater"/>
 			<referrer name="MatchingInfoTimer"/>
 			<referrer name="calculateHealthBox"/>
+			<referrer name="ScrollBar"/>
+			<referrer name="@yH_GameModeInit9"/>
+			<referrer name="@yH_PlayerConnect9"/>
 			<dependency name="float"/>
 			<dependency name="floatmul"/>
 			<param name="oper1">
@@ -1895,9 +2118,10 @@
 			<referrer name="MatchingInfoTimer"/>
 			<referrer name="OnPlayerDeathTimer"/>
 			<referrer name="UpdatePlayerMap"/>
-			<referrer name="cmd_gotowhite"/>
-			<referrer name="cmd_gotoblue"/>
 			<referrer name="CreateDirection"/>
+			<referrer name="Inv_DropPlayerItem"/>
+			<referrer name="dialog_CREATED_ITEMS"/>
+			<referrer name="cmd_newitem"/>
 			<dependency name="cellmin"/>
 			<param name="oper">
 				<paraminfo>Float </paraminfo>
@@ -1933,6 +2157,7 @@
 			<referrer name="UpdatePlayerCircleShift"/>
 			<referrer name="GetAngleZFromPoints"/>
 			<referrer name="CreateDirection"/>
+			<referrer name="@yH_PlayerEditDynamicObject9"/>
 			<param name="oper1">
 				<paraminfo>Float </paraminfo>
 			</param>
@@ -1960,9 +2185,14 @@
 			<referrer name="IncreasePlayerMakeDamage"/>
 			<referrer name="UpdatePlayerMap"/>
 			<referrer name="UpdatePlayerCircleShift"/>
-			<referrer name="cmd_gotowhite"/>
-			<referrer name="cmd_gotoblue"/>
 			<referrer name="CreateDirection"/>
+			<referrer name="ScrollBar"/>
+			<referrer name="Inv_AddItem"/>
+			<referrer name="Inv_DropPlayerItem"/>
+			<referrer name="@yH_GameModeInit9"/>
+			<referrer name="@yH_PlayerConnect9"/>
+			<referrer name="dialog_CREATED_ITEMS"/>
+			<referrer name="cmd_newitem"/>
 			<param name="oper1">
 				<paraminfo>Float </paraminfo>
 			</param>
@@ -2007,9 +2237,10 @@
 			<referrer name="UpdatePlayerPartyBox"/>
 			<referrer name="calculateHealthBox"/>
 			<referrer name="UpdatePlayerCircleShift"/>
-			<referrer name="cmd_gotowhite"/>
-			<referrer name="cmd_gotoblue"/>
 			<referrer name="CreateDirection"/>
+			<referrer name="Inv_DropPlayerItem"/>
+			<referrer name="dialog_CREATED_ITEMS"/>
+			<referrer name="cmd_newitem"/>
 			<param name="oper1">
 				<paraminfo>Float </paraminfo>
 			</param>
@@ -2266,6 +2497,13 @@
 			<dependency name="partyBoxTextDraw"/>
 			<dependency name="partyBoxTextDrawCount"/>
 		</member>
+		<member name="M:@yH_GameModeExit9" syntax="@yH_GameModeExit9()">
+			<attribute name="public"/>
+			<stacksize value="4"/>
+			<dependency name="TextDrawDestroy"/>
+			<dependency name="menuTextDraw"/>
+			<dependency name="menuTextDrawCount"/>
+		</member>
 		<member name="M:@yH_GameModeInit3" syntax="@yH_GameModeInit3()">
 			<attribute name="public"/>
 			<stacksize value="3"/>
@@ -2345,6 +2583,43 @@
 			<dependency name="partyBoxTextDrawID"/>
 			<dependency name="true"/>
 		</member>
+		<member name="M:@yH_GameModeInit9" syntax="@yH_GameModeInit9()">
+			<attribute name="public"/>
+			<stacksize value="8"/>
+			<dependency name="operator*(Float:,_:)"/>
+			<dependency name="operator+(Float:,Float:)"/>
+			<dependency name="CA_Init"/>
+			<dependency name="E_MENU_TEXTDRAW_CLOSE"/>
+			<dependency name="E_MENU_TEXTDRAW_LEFTBTN"/>
+			<dependency name="E_MENU_TEXTDRAW_LEFT_BOX"/>
+			<dependency name="E_MENU_TEXTDRAW_LEFT_MODEL"/>
+			<dependency name="E_MENU_TEXTDRAW_MIDDLEBTN"/>
+			<dependency name="E_MENU_TEXTDRAW_RIGHTBTN"/>
+			<dependency name="E_MENU_TEXTDRAW_RIGHT_BOX"/>
+			<dependency name="E_MENU_TEXTDRAW_RIGHT_MODEL"/>
+			<dependency name="E_MENU_TEXTDRAW_SCROLL_DOWN"/>
+			<dependency name="E_MENU_TEXTDRAW_SCROLL_UP"/>
+			<dependency name="FONT"/>
+			<dependency name="TextDrawAlignment"/>
+			<dependency name="TextDrawBackgroundColor"/>
+			<dependency name="TextDrawBoxColor"/>
+			<dependency name="TextDrawColor"/>
+			<dependency name="TextDrawCreate"/>
+			<dependency name="TextDrawFont"/>
+			<dependency name="TextDrawLetterSize"/>
+			<dependency name="TextDrawSetOutline"/>
+			<dependency name="TextDrawSetPreviewModel"/>
+			<dependency name="TextDrawSetPreviewRot"/>
+			<dependency name="TextDrawSetProportional"/>
+			<dependency name="TextDrawSetSelectable"/>
+			<dependency name="TextDrawSetShadow"/>
+			<dependency name="TextDrawTextSize"/>
+			<dependency name="TextDrawUseBox"/>
+			<dependency name="menuTextDraw"/>
+			<dependency name="menuTextDrawCount"/>
+			<dependency name="menuTextDrawID"/>
+			<dependency name="true"/>
+		</member>
 		<member name="M:@yH_PlayerClickPlayerTextDraw4" syntax="@yH_PlayerClickPlayerTextDraw4(playerid, playertextid)">
 			<attribute name="public"/>
 			<stacksize value="14"/>
@@ -2399,6 +2674,53 @@
 			<dependency name="EndscreenTextDraw"/>
 			<dependency name="EndscreenTextDrawID"/>
 			<dependency name="ResetPlayerToLobby"/>
+			<param name="playerid">
+			</param>
+			<param name="clickedid">
+				<paraminfo>Text </paraminfo>
+			</param>
+		</member>
+		<member name="M:@yH_PlayerClickTextDraw9" syntax="@yH_PlayerClickTextDraw9(playerid, clickedid)">
+			<attribute name="public"/>
+			<stacksize value="141"/>
+			<dependency name="ApplyAnimation"/>
+			<dependency name="CallRemoteFunction"/>
+			<dependency name="E_ITEM_MODELID"/>
+			<dependency name="E_ITEM_NAME"/>
+			<dependency name="E_MENU_TEXTDRAW_CLOSE"/>
+			<dependency name="E_MENU_TEXTDRAW_LEFTBTN"/>
+			<dependency name="E_MENU_TEXTDRAW_LEFT_BOX"/>
+			<dependency name="E_MENU_TEXTDRAW_LEFT_MODEL"/>
+			<dependency name="E_MENU_TEXTDRAW_MIDDLEBTN"/>
+			<dependency name="E_MENU_TEXTDRAW_RIGHTBTN"/>
+			<dependency name="E_MENU_TEXTDRAW_RIGHT_MODEL"/>
+			<dependency name="E_MENU_TEXTDRAW_SCROLL_DOWN"/>
+			<dependency name="E_MENU_TEXTDRAW_SCROLL_UP"/>
+			<dependency name="GetTickCount"/>
+			<dependency name="Inv_DropPlayerItem"/>
+			<dependency name="Inv_GivePlayerItem"/>
+			<dependency name="Inv_Hide"/>
+			<dependency name="Inv_RemoveItem"/>
+			<dependency name="Inv_UpdateLeftMenu"/>
+			<dependency name="Inv_UpdateRightMenu"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="item"/>
+			<dependency name="item"/>
+			<dependency name="menuTextDraw"/>
+			<dependency name="menuTextDrawID"/>
+			<dependency name="nearbyItems"/>
+			<dependency name="nearbyItemsCount"/>
+			<dependency name="playerInventoryItems"/>
+			<dependency name="playerInventoryItemsCount"/>
+			<dependency name="playerLeftMenuClickTickCount"/>
+			<dependency name="playerLeftMenuClickTickCount"/>
+			<dependency name="playerLeftMenuListitem"/>
+			<dependency name="playerLeftMenuPage"/>
+			<dependency name="playerRightMenuClickTickCount"/>
+			<dependency name="playerRightMenuClickTickCount"/>
+			<dependency name="playerRightMenuListitem"/>
+			<dependency name="playerUsingMenu"/>
+			<dependency name="strcat"/>
 			<param name="playerid">
 			</param>
 			<param name="clickedid">
@@ -2526,10 +2848,55 @@
 			<param name="playerid">
 			</param>
 		</member>
+		<member name="M:@yH_PlayerConnect9" syntax="@yH_PlayerConnect9(playerid)">
+			<attribute name="public"/>
+			<stacksize value="7"/>
+			<dependency name="operator*(Float:,_:)"/>
+			<dependency name="operator+(Float:,Float:)"/>
+			<dependency name="CreatePlayerTextDraw"/>
+			<dependency name="E_MENU_TEXTDRAW_LEFT_TEXT"/>
+			<dependency name="E_MENU_TEXTDRAW_RIGHT_TEXT"/>
+			<dependency name="E_MENU_TEXTDRAW_SCROLL"/>
+			<dependency name="FONT"/>
+			<dependency name="PlayerTextDrawAlignment"/>
+			<dependency name="PlayerTextDrawBackgroundColor"/>
+			<dependency name="PlayerTextDrawBoxColor"/>
+			<dependency name="PlayerTextDrawColor"/>
+			<dependency name="PlayerTextDrawFont"/>
+			<dependency name="PlayerTextDrawLetterSize"/>
+			<dependency name="PlayerTextDrawSetOutline"/>
+			<dependency name="PlayerTextDrawSetProportional"/>
+			<dependency name="PlayerTextDrawSetSelectable"/>
+			<dependency name="PlayerTextDrawSetShadow"/>
+			<dependency name="PlayerTextDrawTextSize"/>
+			<dependency name="PlayerTextDrawUseBox"/>
+			<dependency name="menuPlayerTextDraw"/>
+			<dependency name="menuPlayerTextDraw"/>
+			<dependency name="menuPlayerTextDrawCount"/>
+			<dependency name="menuPlayerTextDrawID"/>
+			<dependency name="menuPlayerTextDrawID"/>
+			<dependency name="playerInventoryItemsCount"/>
+			<dependency name="playerItemPickupTextDraw"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+		</member>
 		<member name="M:@yH_PlayerDeath6" syntax="@yH_PlayerDeath6(playerid, killerid, reason)">
 			<attribute name="public"/>
 			<stacksize value="6"/>
 			<dependency name="OnPlayerDeathEx"/>
+			<param name="playerid">
+			</param>
+			<param name="killerid">
+			</param>
+			<param name="reason">
+			</param>
+		</member>
+		<member name="M:@yH_PlayerDeath9" syntax="@yH_PlayerDeath9(playerid, killerid, reason)">
+			<attribute name="public"/>
+			<stacksize value="4"/>
+			<dependency name="Inv_Hide"/>
+			<dependency name="playerUsingMenu"/>
 			<param name="playerid">
 			</param>
 			<param name="killerid">
@@ -2586,6 +2953,66 @@
 			<param name="playerid">
 			</param>
 		</member>
+		<member name="M:@yH_PlayerDisconnect9" syntax="@yH_PlayerDisconnect9(playerid, reason)">
+			<attribute name="public"/>
+			<stacksize value="5"/>
+			<dependency name="PlayerTextDrawDestroy"/>
+			<dependency name="false"/>
+			<dependency name="menuPlayerTextDraw"/>
+			<dependency name="menuPlayerTextDrawCount"/>
+			<dependency name="playerUsingMenu"/>
+			<param name="playerid">
+			</param>
+			<param name="reason">
+			</param>
+		</member>
+		<member name="M:@yH_PlayerEditDynamicObject9" syntax="@yH_PlayerEditDynamicObject9(playerid, objectid, response, x, y, z, rx, ry, rz)">
+			<attribute name="public"/>
+			<stacksize value="2"/>
+			<dependency name="operator-(Float:,Float:)"/>
+			<dependency name="E_ITEM_OBJECTID"/>
+			<dependency name="E_ITEM_ROTX"/>
+			<dependency name="E_ITEM_ROTY"/>
+			<dependency name="E_ITEM_ROTZ"/>
+			<dependency name="E_ITEM_VALID"/>
+			<dependency name="E_ITEM_ZPUSH"/>
+			<dependency name="item"/>
+			<dependency name="item"/>
+			<dependency name="itemPoolSize"/>
+			<param name="playerid">
+			</param>
+			<param name="objectid">
+			</param>
+			<param name="response">
+			</param>
+			<param name="x">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="y">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="z">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="rx">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="ry">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="rz">
+				<paraminfo>Float </paraminfo>
+			</param>
+		</member>
+		<member name="M:@yH_PlayerEnterDynamicArea9" syntax="@yH_PlayerEnterDynamicArea9(playerid, areaid)">
+			<attribute name="public"/>
+			<stacksize value="4"/>
+			<dependency name="Inv_UpdatePlaiyerPickupTextDraw"/>
+			<param name="playerid">
+			</param>
+			<param name="areaid">
+			</param>
+		</member>
 		<member name="M:@yH_PlayerKeyStateChange6" syntax="@yH_PlayerKeyStateChange6(playerid, newkeys, oldkeys)">
 			<attribute name="public"/>
 			<stacksize value="4"/>
@@ -2596,6 +3023,15 @@
 			<param name="newkeys">
 			</param>
 			<param name="oldkeys">
+			</param>
+		</member>
+		<member name="M:@yH_PlayerLeaveDynamicArea9" syntax="@yH_PlayerLeaveDynamicArea9(playerid, areaid)">
+			<attribute name="public"/>
+			<stacksize value="4"/>
+			<dependency name="Inv_UpdatePlaiyerPickupTextDraw"/>
+			<param name="playerid">
+			</param>
+			<param name="areaid">
 			</param>
 		</member>
 		<member name="M:@yH_PlayerRequestClass4" syntax="@yH_PlayerRequestClass4(playerid, classid)">
@@ -3174,6 +3610,7 @@
 		<member name="M:ApplyAnimation" syntax="ApplyAnimation(playerid, animlib[], animname[], fDelta, loop, lockx, locky, freeze, time, forcesync)">
 			<attribute name="native"/>
 			<referrer name="@yH_PlayerClickPlayerTextDraw4"/>
+			<referrer name="@yH_PlayerClickTextDraw9"/>
 			<param name="playerid">
 			</param>
 			<param name="animlib">
@@ -3580,6 +4017,8 @@
 		</member>
 		<member name="M:CA_FindZ_For2DCoord" syntax="CA_FindZ_For2DCoord(x, y, &amp;z)">
 			<stacksize value="11"/>
+			<referrer name="Inv_AddItem"/>
+			<referrer name="Inv_DropPlayerItem"/>
 			<dependency name="CA_RayCastLine"/>
 			<param name="x">
 				<paraminfo>Float </paraminfo>
@@ -3588,6 +4027,25 @@
 				<paraminfo>Float </paraminfo>
 			</param>
 			<param name="z">
+				<paraminfo>Float &amp; </paraminfo>
+			</param>
+		</member>
+		<member name="M:CA_GetModelBoundingSphere" syntax="CA_GetModelBoundingSphere(modelid, &amp;offx, &amp;offy, &amp;offz, &amp;radius)">
+			<attribute name="native"/>
+			<referrer name="Inv_AddItem"/>
+			<referrer name="Inv_DropPlayerItem"/>
+			<param name="modelid">
+			</param>
+			<param name="offx">
+				<paraminfo>Float &amp; </paraminfo>
+			</param>
+			<param name="offy">
+				<paraminfo>Float &amp; </paraminfo>
+			</param>
+			<param name="offz">
+				<paraminfo>Float &amp; </paraminfo>
+			</param>
+			<param name="radius">
 				<paraminfo>Float &amp; </paraminfo>
 			</param>
 		</member>
@@ -3638,6 +4096,10 @@
 			<param name="z">
 				<paraminfo>Float </paraminfo>
 			</param>
+		</member>
+		<member name="M:CA_Init" syntax="CA_Init()">
+			<attribute name="native"/>
+			<referrer name="@yH_GameModeInit9"/>
 		</member>
 		<member name="M:CA_IsPlayerBlocked" syntax="CA_IsPlayerBlocked(playerid, dist, height)">
 			<stacksize value="17"/>
@@ -3976,6 +4438,7 @@
 			<attribute name="native"/>
 			<referrer name="_@_y_funcinc_@_"/>
 			<referrer name="va_CallRemoteFunction"/>
+			<referrer name="@yH_PlayerClickTextDraw9"/>
 			<param name="function">
 				<paraminfo> [] </paraminfo>
 			</param>
@@ -3989,6 +4452,7 @@
 		<member name="M:CancelSelectTextDraw" syntax="CancelSelectTextDraw(playerid)">
 			<attribute name="native"/>
 			<referrer name="@yH_PlayerSpawn6"/>
+			<referrer name="Inv_Hide"/>
 			<param name="playerid">
 			</param>
 		</member>
@@ -4117,6 +4581,8 @@
 		<member name="M:CreateDynamicCircle" syntax="CreateDynamicCircle(x, y, size, worldid, interiorid, playerid)">
 			<attribute name="native"/>
 			<referrer name="MatchingInfoTimer"/>
+			<referrer name="Inv_AddItem"/>
+			<referrer name="Inv_DropPlayerItem"/>
 			<param name="x">
 				<paraminfo>Float </paraminfo>
 			</param>
@@ -4171,6 +4637,8 @@
 			<referrer name="CA_CreateDynamicObject_SC"/>
 			<referrer name="CA_CreateDynamicObject_DC"/>
 			<referrer name="OnPlayerDeathTimer"/>
+			<referrer name="Inv_AddItem"/>
+			<referrer name="Inv_DropPlayerItem"/>
 			<param name="modelid">
 			</param>
 			<param name="x">
@@ -4300,6 +4768,8 @@
 			<referrer name="UpdatePlayerPartyBox"/>
 			<referrer name="ShowMatchFinished"/>
 			<referrer name="UpdatePlayerCircleShift"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="@yH_PlayerConnect9"/>
 			<param name="playerid">
 			</param>
 			<param name="x">
@@ -4436,13 +4906,16 @@
 			<stacksize value="1"/>
 			<automaton name="ysi_debug"/>
 			<referrer name="YVers_OnScriptInit"/>
-			<transition target="¥Q—"/>
+			<transition target="€ú1"/>
 
 		</member>
 		<member name="M:DestroyDynamicArea" syntax="DestroyDynamicArea(areaid)">
 			<attribute name="native"/>
 			<referrer name="MatchingInfoTimer"/>
 			<referrer name="MatchingReset"/>
+			<referrer name="Inv_RemoveItem"/>
+			<referrer name="Inv_GivePlayerItem"/>
+			<referrer name="Inv_RemoveAllItems"/>
 			<param name="areaid">
 			</param>
 		</member>
@@ -4457,6 +4930,9 @@
 			<referrer name="Object_DestroyCircle"/>
 			<referrer name="Object_UpdateCircle"/>
 			<referrer name="CA_DestroyObject_DC"/>
+			<referrer name="Inv_RemoveItem"/>
+			<referrer name="Inv_GivePlayerItem"/>
+			<referrer name="Inv_RemoveAllItems"/>
 			<param name="objectid">
 			</param>
 		</member>
@@ -4536,6 +5012,14 @@
 		<member name="M:DisableInteriorEnterExits" syntax="DisableInteriorEnterExits()">
 			<attribute name="native"/>
 			<referrer name="InitiateGamemode"/>
+		</member>
+		<member name="M:EditDynamicObject" syntax="EditDynamicObject(playerid, objectid)">
+			<attribute name="native"/>
+			<referrer name="Inv_EditItem"/>
+			<param name="playerid">
+			</param>
+			<param name="objectid">
+			</param>
 		</member>
 		<member name="M:EnableStuntBonusForAll" syntax="EnableStuntBonusForAll(enable)">
 			<attribute name="native"/>
@@ -5254,8 +5738,6 @@
 		<member name="M:GetAngleZFromPoints" syntax="GetAngleZFromPoints(x1, y1, x2, y2)">
 			<tagname value="Float"/>
 			<stacksize value="4"/>
-			<referrer name="cmd_gotowhite"/>
-			<referrer name="cmd_gotoblue"/>
 			<referrer name="CreateDirection"/>
 			<dependency name="operator-(Float:,Float:)"/>
 			<dependency name="atan2"/>
@@ -5323,6 +5805,21 @@
 				<paraminfo>Float </paraminfo>
 			</param>
 		</member>
+		<member name="M:GetDynamicObjectPos" syntax="GetDynamicObjectPos(objectid, &amp;x, &amp;y, &amp;z)">
+			<attribute name="native"/>
+			<referrer name="Inv_EditItem"/>
+			<param name="objectid">
+			</param>
+			<param name="x">
+				<paraminfo>Float &amp; </paraminfo>
+			</param>
+			<param name="y">
+				<paraminfo>Float &amp; </paraminfo>
+			</param>
+			<param name="z">
+				<paraminfo>Float &amp; </paraminfo>
+			</param>
+		</member>
 		<member name="M:GetIP" syntax="GetIP(playerid)">
 			<stacksize value="21"/>
 			<dependency name="GetPlayerIp"/>
@@ -5374,6 +5871,9 @@
 			<referrer name="CA_IsPlayerFacingWater"/>
 			<referrer name="CA_IsPlayerBlocked"/>
 			<referrer name="OnPlayerDeathEx"/>
+			<referrer name="Inv_DropPlayerItem"/>
+			<referrer name="dialog_CREATED_ITEMS"/>
+			<referrer name="cmd_newitem"/>
 			<param name="playerid">
 			</param>
 			<param name="ang">
@@ -5443,6 +5943,13 @@
 			<param name="len">
 			</param>
 		</member>
+		<member name="M:GetPlayerPoolSize" syntax="GetPlayerPoolSize()">
+			<attribute name="native"/>
+			<referrer name="Inv_RemoveItem"/>
+			<referrer name="Inv_GivePlayerItem"/>
+			<referrer name="Inv_DropPlayerItem"/>
+			<referrer name="Inv_RemoveAllItems"/>
+		</member>
 		<member name="M:GetPlayerPos" syntax="GetPlayerPos(playerid, &amp;x, &amp;y, &amp;z)">
 			<attribute name="native"/>
 			<referrer name="CA_IsPlayerOnSurface"/>
@@ -5453,9 +5960,10 @@
 			<referrer name="OnPlayerDeathEx"/>
 			<referrer name="UpdatePlayerMap"/>
 			<referrer name="UpdatePlayerCircleShift"/>
-			<referrer name="cmd_gotowhite"/>
-			<referrer name="cmd_gotoblue"/>
 			<referrer name="CreateDirection"/>
+			<referrer name="Inv_DropPlayerItem"/>
+			<referrer name="dialog_CREATED_ITEMS"/>
+			<referrer name="cmd_newitem"/>
 			<param name="playerid">
 			</param>
 			<param name="x">
@@ -5479,6 +5987,7 @@
 			<attribute name="native"/>
 			<referrer name="SetTimerHook"/>
 			<referrer name="TF_TimerTick"/>
+			<referrer name="@yH_PlayerClickTextDraw9"/>
 		</member>
 		<member name="M:GetVehiclePos" syntax="GetVehiclePos(vehicleid, &amp;x, &amp;y, &amp;z)">
 			<attribute name="native"/>
@@ -5707,10 +6216,370 @@
 			<dependency name="ShowPlayerMarkers"/>
 			<dependency name="print"/>
 		</member>
+		<member name="M:Inv_AddItem" syntax="Inv_AddItem(modelid, name[], x, y, z, rx, ry, rz, zpush)">
+			<stacksize value="17"/>
+			<referrer name="Inv_LoadItemsFromDatabase"/>
+			<referrer name="dialog_CREATED_ITEMS"/>
+			<referrer name="cmd_newitem"/>
+			<dependency name="operator+(Float:,Float:)"/>
+			<dependency name="CA_FindZ_For2DCoord"/>
+			<dependency name="CA_GetModelBoundingSphere"/>
+			<dependency name="CreateDynamicCircle"/>
+			<dependency name="CreateDynamicObject"/>
+			<dependency name="E_ITEM_AREAID"/>
+			<dependency name="E_ITEM_MODELID"/>
+			<dependency name="E_ITEM_NAME"/>
+			<dependency name="E_ITEM_OBJECTID"/>
+			<dependency name="E_ITEM_PLAYERID"/>
+			<dependency name="E_ITEM_ROTX"/>
+			<dependency name="E_ITEM_ROTY"/>
+			<dependency name="E_ITEM_ROTZ"/>
+			<dependency name="E_ITEM_VALID"/>
+			<dependency name="E_ITEM_ZPUSH"/>
+			<dependency name="format"/>
+			<dependency name="item"/>
+			<dependency name="item"/>
+			<dependency name="itemPoolSize"/>
+			<dependency name="true"/>
+			<param name="modelid">
+			</param>
+			<param name="name">
+				<paraminfo> [] </paraminfo>
+			</param>
+			<param name="x">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="y">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="z">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="rx">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="ry">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="rz">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="zpush">
+				<paraminfo>Float </paraminfo>
+			</param>
+		</member>
+		<member name="M:Inv_DropPlayerItem" syntax="Inv_DropPlayerItem(playerid, playerSlot)">
+			<stacksize value="21"/>
+			<referrer name="@yH_PlayerClickTextDraw9"/>
+			<dependency name="operator-(Float:)"/>
+			<dependency name="operator+(Float:,Float:)"/>
+			<dependency name="operator*(Float:,Float:)"/>
+			<dependency name="CA_FindZ_For2DCoord"/>
+			<dependency name="CA_GetModelBoundingSphere"/>
+			<dependency name="CreateDynamicCircle"/>
+			<dependency name="CreateDynamicObject"/>
+			<dependency name="E_ITEM_AREAID"/>
+			<dependency name="E_ITEM_MODELID"/>
+			<dependency name="E_ITEM_OBJECTID"/>
+			<dependency name="E_ITEM_PLAYERID"/>
+			<dependency name="E_ITEM_ROTX"/>
+			<dependency name="E_ITEM_ROTY"/>
+			<dependency name="E_ITEM_ROTZ"/>
+			<dependency name="E_ITEM_ZPUSH"/>
+			<dependency name="GetPlayerFacingAngle"/>
+			<dependency name="GetPlayerPoolSize"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="Inv_UpdateLeftMenu"/>
+			<dependency name="Inv_UpdateRightMenu"/>
+			<dependency name="IsPlayerConnected"/>
+			<dependency name="Streamer_Update"/>
+			<dependency name="degrees"/>
+			<dependency name="floatcos"/>
+			<dependency name="floatsin"/>
+			<dependency name="item"/>
+			<dependency name="item"/>
+			<dependency name="playerInventoryItems"/>
+			<dependency name="playerInventoryItems"/>
+			<dependency name="playerInventoryItemsCount"/>
+			<dependency name="playerUsingMenu"/>
+			<param name="playerid">
+			</param>
+			<param name="playerSlot">
+			</param>
+		</member>
+		<member name="M:Inv_EditItem" syntax="Inv_EditItem(playerid, itemid)">
+			<stacksize value="6"/>
+			<referrer name="cmd_newitem"/>
+			<dependency name="E_ITEM_OBJECTID"/>
+			<dependency name="E_ITEM_PLAYERID"/>
+			<dependency name="E_ITEM_ZPUSH"/>
+			<dependency name="EditDynamicObject"/>
+			<dependency name="GetDynamicObjectPos"/>
+			<dependency name="item"/>
+			<dependency name="item"/>
+			<dependency name="itemPoolSize"/>
+			<param name="playerid">
+			</param>
+			<param name="itemid">
+			</param>
+		</member>
+		<member name="M:Inv_GivePlayerItem" syntax="Inv_GivePlayerItem(playerid, itemid)">
+			<stacksize value="7"/>
+			<referrer name="@yH_PlayerClickTextDraw9"/>
+			<dependency name="DestroyDynamicArea"/>
+			<dependency name="DestroyDynamicObject"/>
+			<dependency name="E_ITEM_AREAID"/>
+			<dependency name="E_ITEM_OBJECTID"/>
+			<dependency name="E_ITEM_PLAYERID"/>
+			<dependency name="GetPlayerPoolSize"/>
+			<dependency name="Inv_UpdateLeftMenu"/>
+			<dependency name="Inv_UpdatePlaiyerPickupTextDraw"/>
+			<dependency name="Inv_UpdateRightMenu"/>
+			<dependency name="IsPlayerConnected"/>
+			<dependency name="MAX_PLAYER_ITEMS"/>
+			<dependency name="item"/>
+			<dependency name="item"/>
+			<dependency name="playerInventoryItems"/>
+			<dependency name="playerInventoryItems"/>
+			<dependency name="playerInventoryItemsCount"/>
+			<dependency name="playerUsingMenu"/>
+			<param name="playerid">
+			</param>
+			<param name="itemid">
+			</param>
+		</member>
+		<member name="M:Inv_Hide" syntax="Inv_Hide(playerid)">
+			<stacksize value="5"/>
+			<referrer name="@yH_PlayerClickTextDraw9"/>
+			<referrer name="@yH_PlayerDeath9"/>
+			<dependency name="CancelSelectTextDraw"/>
+			<dependency name="PlayerTextDrawHide"/>
+			<dependency name="TextDrawHideForPlayer"/>
+			<dependency name="false"/>
+			<dependency name="menuPlayerTextDraw"/>
+			<dependency name="menuPlayerTextDrawCount"/>
+			<dependency name="menuTextDraw"/>
+			<dependency name="menuTextDrawCount"/>
+			<dependency name="playerUsingMenu"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:Inv_LoadItemsFromDatabase" syntax="Inv_LoadItemsFromDatabase(database[])">
+			<stacksize value="79"/>
+			<dependency name="Inv_AddItem"/>
+			<dependency name="db_close"/>
+			<dependency name="db_free_result"/>
+			<dependency name="db_get_field"/>
+			<dependency name="db_get_field_float"/>
+			<dependency name="db_get_field_int"/>
+			<dependency name="db_next_row"/>
+			<dependency name="db_num_rows"/>
+			<dependency name="db_open"/>
+			<dependency name="db_query"/>
+			<param name="database">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:Inv_RemoveAllItems" syntax="Inv_RemoveAllItems()">
+			<stacksize value="6"/>
+			<dependency name="DestroyDynamicArea"/>
+			<dependency name="DestroyDynamicObject"/>
+			<dependency name="E_ITEM_AREAID"/>
+			<dependency name="E_ITEM_OBJECTID"/>
+			<dependency name="E_ITEM_PLAYERID"/>
+			<dependency name="E_ITEM_VALID"/>
+			<dependency name="GetPlayerPoolSize"/>
+			<dependency name="Inv_UpdateLeftMenu"/>
+			<dependency name="Inv_UpdatePlaiyerPickupTextDraw"/>
+			<dependency name="Inv_UpdateRightMenu"/>
+			<dependency name="IsPlayerConnected"/>
+			<dependency name="false"/>
+			<dependency name="item"/>
+			<dependency name="item"/>
+			<dependency name="itemPoolSize"/>
+			<dependency name="playerInventoryItemsCount"/>
+			<dependency name="playerUsingMenu"/>
+		</member>
+		<member name="M:Inv_RemoveItem" syntax="Inv_RemoveItem(itemid)">
+			<stacksize value="6"/>
+			<referrer name="@yH_PlayerClickTextDraw9"/>
+			<dependency name="DestroyDynamicArea"/>
+			<dependency name="DestroyDynamicObject"/>
+			<dependency name="E_ITEM_AREAID"/>
+			<dependency name="E_ITEM_OBJECTID"/>
+			<dependency name="E_ITEM_PLAYERID"/>
+			<dependency name="E_ITEM_VALID"/>
+			<dependency name="GetPlayerPoolSize"/>
+			<dependency name="Inv_UpdateLeftMenu"/>
+			<dependency name="Inv_UpdatePlaiyerPickupTextDraw"/>
+			<dependency name="Inv_UpdateRightMenu"/>
+			<dependency name="IsPlayerConnected"/>
+			<dependency name="false"/>
+			<dependency name="item"/>
+			<dependency name="item"/>
+			<dependency name="itemPoolSize"/>
+			<dependency name="playerInventoryItems"/>
+			<dependency name="playerInventoryItems"/>
+			<dependency name="playerInventoryItemsCount"/>
+			<dependency name="playerUsingMenu"/>
+			<param name="itemid">
+			</param>
+		</member>
+		<member name="M:Inv_Show" syntax="Inv_Show(playerid)">
+			<stacksize value="6"/>
+			<referrer name="S@@_OnPlayerKeyStateChange"/>
+			<dependency name="E_MENU_TEXTDRAW_LEFT_BOX"/>
+			<dependency name="E_MENU_TEXTDRAW_LEFT_MODEL"/>
+			<dependency name="E_MENU_TEXTDRAW_LEFT_TEXT"/>
+			<dependency name="E_MENU_TEXTDRAW_RIGHT_BOX"/>
+			<dependency name="E_MENU_TEXTDRAW_RIGHT_MODEL"/>
+			<dependency name="E_MENU_TEXTDRAW_RIGHT_TEXT"/>
+			<dependency name="Inv_UpdateLeftMenu"/>
+			<dependency name="Inv_UpdateRightMenu"/>
+			<dependency name="PlayerTextDrawShow"/>
+			<dependency name="SelectTextDraw"/>
+			<dependency name="TextDrawShowForPlayer"/>
+			<dependency name="false"/>
+			<dependency name="menuPlayerTextDraw"/>
+			<dependency name="menuPlayerTextDrawCount"/>
+			<dependency name="menuPlayerTextDrawID"/>
+			<dependency name="menuTextDraw"/>
+			<dependency name="menuTextDrawCount"/>
+			<dependency name="menuTextDrawID"/>
+			<dependency name="playerLeftMenuListitem"/>
+			<dependency name="playerLeftMenuPage"/>
+			<dependency name="playerRightMenuListitem"/>
+			<dependency name="playerUsingMenu"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:Inv_UpdateLeftMenu" syntax="Inv_UpdateLeftMenu(playerid)">
+			<stacksize value="21"/>
+			<referrer name="Inv_RemoveItem"/>
+			<referrer name="Inv_Show"/>
+			<referrer name="Inv_GivePlayerItem"/>
+			<referrer name="Inv_DropPlayerItem"/>
+			<referrer name="Inv_RemoveAllItems"/>
+			<referrer name="@yH_PlayerClickTextDraw9"/>
+			<dependency name="CreatePlayerTextDraw"/>
+			<dependency name="E_ITEM_AREAID"/>
+			<dependency name="E_ITEM_MODELID"/>
+			<dependency name="E_ITEM_NAME"/>
+			<dependency name="E_ITEM_VALID"/>
+			<dependency name="E_MENU_TEXTDRAW_LEFT_BOX"/>
+			<dependency name="E_MENU_TEXTDRAW_LEFT_MODEL"/>
+			<dependency name="E_MENU_TEXTDRAW_LEFT_TEXT"/>
+			<dependency name="E_MENU_TEXTDRAW_SCROLL"/>
+			<dependency name="E_MENU_TEXTDRAW_SCROLL_DOWN"/>
+			<dependency name="E_MENU_TEXTDRAW_SCROLL_UP"/>
+			<dependency name="IsPlayerInDynamicArea"/>
+			<dependency name="PlayerTextDrawAlignment"/>
+			<dependency name="PlayerTextDrawBackgroundColor"/>
+			<dependency name="PlayerTextDrawBoxColor"/>
+			<dependency name="PlayerTextDrawColor"/>
+			<dependency name="PlayerTextDrawDestroy"/>
+			<dependency name="PlayerTextDrawFont"/>
+			<dependency name="PlayerTextDrawHide"/>
+			<dependency name="PlayerTextDrawLetterSize"/>
+			<dependency name="PlayerTextDrawSetOutline"/>
+			<dependency name="PlayerTextDrawSetProportional"/>
+			<dependency name="PlayerTextDrawSetShadow"/>
+			<dependency name="PlayerTextDrawSetString"/>
+			<dependency name="PlayerTextDrawShow"/>
+			<dependency name="PlayerTextDrawTextSize"/>
+			<dependency name="PlayerTextDrawUseBox"/>
+			<dependency name="SELECTED"/>
+			<dependency name="ScrollBar"/>
+			<dependency name="TextDrawBoxColor"/>
+			<dependency name="TextDrawHideForPlayer"/>
+			<dependency name="TextDrawSetPreviewModel"/>
+			<dependency name="TextDrawShowForPlayer"/>
+			<dependency name="item"/>
+			<dependency name="itemPoolSize"/>
+			<dependency name="menuPlayerTextDraw"/>
+			<dependency name="menuPlayerTextDraw"/>
+			<dependency name="menuPlayerTextDrawID"/>
+			<dependency name="menuTextDraw"/>
+			<dependency name="menuTextDrawID"/>
+			<dependency name="nearbyItems"/>
+			<dependency name="nearbyItems"/>
+			<dependency name="nearbyItemsCount"/>
+			<dependency name="playerLeftMenuListitem"/>
+			<dependency name="playerLeftMenuPage"/>
+			<dependency name="strcat"/>
+			<dependency name="strlen"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:Inv_UpdatePlaiyerPickupTextDraw" syntax="Inv_UpdatePlaiyerPickupTextDraw(playerid)">
+			<stacksize value="73"/>
+			<referrer name="Inv_RemoveItem"/>
+			<referrer name="Inv_GivePlayerItem"/>
+			<referrer name="Inv_RemoveAllItems"/>
+			<referrer name="@yH_PlayerEnterDynamicArea9"/>
+			<referrer name="@yH_PlayerLeaveDynamicArea9"/>
+			<dependency name="E_ITEM_AREAID"/>
+			<dependency name="E_ITEM_NAME"/>
+			<dependency name="E_ITEM_VALID"/>
+			<dependency name="IsPlayerInDynamicArea"/>
+			<dependency name="PlayerTextDrawHide"/>
+			<dependency name="PlayerTextDrawSetString"/>
+			<dependency name="PlayerTextDrawShow"/>
+			<dependency name="format"/>
+			<dependency name="item"/>
+			<dependency name="item"/>
+			<dependency name="itemPoolSize"/>
+			<dependency name="playerItemPickupTextDraw"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:Inv_UpdateRightMenu" syntax="Inv_UpdateRightMenu(playerid)">
+			<stacksize value="19"/>
+			<referrer name="Inv_RemoveItem"/>
+			<referrer name="Inv_Show"/>
+			<referrer name="Inv_GivePlayerItem"/>
+			<referrer name="Inv_DropPlayerItem"/>
+			<referrer name="Inv_RemoveAllItems"/>
+			<referrer name="@yH_PlayerClickTextDraw9"/>
+			<dependency name="E_ITEM_MODELID"/>
+			<dependency name="E_ITEM_NAME"/>
+			<dependency name="E_MENU_TEXTDRAW_RIGHT_BOX"/>
+			<dependency name="E_MENU_TEXTDRAW_RIGHT_MODEL"/>
+			<dependency name="E_MENU_TEXTDRAW_RIGHT_TEXT"/>
+			<dependency name="MAX_PLAYER_ITEMS"/>
+			<dependency name="PlayerTextDrawHide"/>
+			<dependency name="PlayerTextDrawSetString"/>
+			<dependency name="PlayerTextDrawShow"/>
+			<dependency name="SELECTED"/>
+			<dependency name="TextDrawBackgroundColor"/>
+			<dependency name="TextDrawHideForPlayer"/>
+			<dependency name="TextDrawSetPreviewModel"/>
+			<dependency name="TextDrawShowForPlayer"/>
+			<dependency name="item"/>
+			<dependency name="menuPlayerTextDraw"/>
+			<dependency name="menuPlayerTextDrawID"/>
+			<dependency name="menuTextDraw"/>
+			<dependency name="menuTextDrawID"/>
+			<dependency name="playerInventoryItems"/>
+			<dependency name="playerInventoryItemsCount"/>
+			<dependency name="playerRightMenuListitem"/>
+			<dependency name="strcat"/>
+			<dependency name="strlen"/>
+			<param name="playerid">
+			</param>
+		</member>
 		<member name="M:IsCrashDetectPresent" syntax="IsCrashDetectPresent()">
 			<tagname value="bool"/>
 			<stacksize value="1"/>
 			<dependency name="false"/>
+		</member>
+		<member name="M:IsPlayerAdmin" syntax="IsPlayerAdmin(playerid)">
+			<attribute name="native"/>
+			<referrer name="cmd_newitem"/>
+			<param name="playerid">
+			</param>
 		</member>
 		<member name="M:IsPlayerConnected" syntax="IsPlayerConnected(playerid)">
 			<attribute name="native"/>
@@ -5719,6 +6588,10 @@
 			<referrer name="Itter_OPDCInternal"/>
 			<referrer name="Itter_OnFilterScriptInit"/>
 			<referrer name="Itter_OnGameModeInit"/>
+			<referrer name="Inv_RemoveItem"/>
+			<referrer name="Inv_GivePlayerItem"/>
+			<referrer name="Inv_DropPlayerItem"/>
+			<referrer name="Inv_RemoveAllItems"/>
 			<param name="playerid">
 			</param>
 		</member>
@@ -5732,6 +6605,17 @@
 			<referrer name="UpdatePlayerPartyBox"/>
 			<dependency name="PlayerDeath"/>
 			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:IsPlayerInDynamicArea" syntax="IsPlayerInDynamicArea(playerid, areaid, recheck)">
+			<attribute name="native"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="Inv_UpdatePlaiyerPickupTextDraw"/>
+			<param name="playerid">
+			</param>
+			<param name="areaid">
+			</param>
+			<param name="recheck">
 			</param>
 		</member>
 		<member name="M:IsPlayerNPC" syntax="IsPlayerNPC(playerid)">
@@ -6177,8 +7061,6 @@
 		</member>
 		<member name="M:MapAndreas_FindZ_For2DCoord" syntax="MapAndreas_FindZ_For2DCoord(X, Y, &amp;Z)">
 			<attribute name="native"/>
-			<referrer name="cmd_gotowhite"/>
-			<referrer name="cmd_gotoblue"/>
 			<referrer name="CreateDirection"/>
 			<param name="X">
 				<paraminfo>Float </paraminfo>
@@ -8283,6 +9165,23 @@
 			<param name="p">
 			</param>
 		</member>
+		<member name="M:PlayerPlaySound" syntax="PlayerPlaySound(playerid, soundid, x, y, z)">
+			<attribute name="native"/>
+			<referrer name="S@@_OnPlayerKeyStateChange"/>
+			<param name="playerid">
+			</param>
+			<param name="soundid">
+			</param>
+			<param name="x">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="y">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="z">
+				<paraminfo>Float </paraminfo>
+			</param>
+		</member>
 		<member name="M:PlayerSpectatePlayer" syntax="PlayerSpectatePlayer(playerid, targetplayerid, mode)">
 			<attribute name="native"/>
 			<referrer name="MatchingWinner"/>
@@ -8311,6 +9210,8 @@
 			<referrer name="UpdatePlayerPartyBox"/>
 			<referrer name="ShowMatchFinished"/>
 			<referrer name="UpdatePlayerCircleShift"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="@yH_PlayerConnect9"/>
 			<param name="playerid">
 			</param>
 			<param name="text">
@@ -8327,6 +9228,8 @@
 			<referrer name="UpdatePlayerPartyBox"/>
 			<referrer name="ShowMatchFinished"/>
 			<referrer name="UpdatePlayerCircleShift"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="@yH_PlayerConnect9"/>
 			<param name="playerid">
 			</param>
 			<param name="text">
@@ -8344,6 +9247,8 @@
 			<referrer name="@yH_PlayerConnect7"/>
 			<referrer name="UpdatePlayerPartyBox"/>
 			<referrer name="UpdatePlayerCircleShift"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="@yH_PlayerConnect9"/>
 			<param name="playerid">
 			</param>
 			<param name="text">
@@ -8364,6 +9269,8 @@
 			<referrer name="UpdatePlayerPartyBox"/>
 			<referrer name="ShowMatchFinished"/>
 			<referrer name="UpdatePlayerCircleShift"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="@yH_PlayerConnect9"/>
 			<param name="playerid">
 			</param>
 			<param name="text">
@@ -8382,6 +9289,8 @@
 			<referrer name="HideMatchFinished"/>
 			<referrer name="UpdatePlayerCircleShift"/>
 			<referrer name="DestroyPlayerCircleShift"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="@yH_PlayerDisconnect9"/>
 			<param name="playerid">
 			</param>
 			<param name="text">
@@ -8455,6 +9364,8 @@
 			<referrer name="UpdatePlayerPartyBox"/>
 			<referrer name="ShowMatchFinished"/>
 			<referrer name="UpdatePlayerCircleShift"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="@yH_PlayerConnect9"/>
 			<param name="playerid">
 			</param>
 			<param name="text">
@@ -8471,6 +9382,10 @@
 			<referrer name="HidePlayerKDText"/>
 			<referrer name="UpdatePlayerCircleShift"/>
 			<referrer name="HidePlayerCircleShift"/>
+			<referrer name="Inv_Hide"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="Inv_UpdateRightMenu"/>
+			<referrer name="Inv_UpdatePlaiyerPickupTextDraw"/>
 			<param name="playerid">
 			</param>
 			<param name="text">
@@ -8486,6 +9401,8 @@
 			<referrer name="UpdatePlayerPartyBox"/>
 			<referrer name="ShowMatchFinished"/>
 			<referrer name="UpdatePlayerCircleShift"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="@yH_PlayerConnect9"/>
 			<param name="playerid">
 			</param>
 			<param name="text">
@@ -8507,6 +9424,8 @@
 			<referrer name="UpdatePlayerPartyBox"/>
 			<referrer name="ShowMatchFinished"/>
 			<referrer name="UpdatePlayerCircleShift"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="@yH_PlayerConnect9"/>
 			<param name="playerid">
 			</param>
 			<param name="text">
@@ -8524,6 +9443,8 @@
 			<referrer name="UpdatePlayerPartyBox"/>
 			<referrer name="ShowMatchFinished"/>
 			<referrer name="UpdatePlayerCircleShift"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="@yH_PlayerConnect9"/>
 			<param name="playerid">
 			</param>
 			<param name="text">
@@ -8540,6 +9461,7 @@
 			<referrer name="UpdatePlayerPartyBox"/>
 			<referrer name="ShowMatchFinished"/>
 			<referrer name="UpdatePlayerCircleShift"/>
+			<referrer name="@yH_PlayerConnect9"/>
 			<param name="playerid">
 			</param>
 			<param name="text">
@@ -8557,6 +9479,8 @@
 			<referrer name="UpdatePlayerPartyBox"/>
 			<referrer name="ShowMatchFinished"/>
 			<referrer name="UpdatePlayerCircleShift"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="@yH_PlayerConnect9"/>
 			<param name="playerid">
 			</param>
 			<param name="text">
@@ -8573,6 +9497,9 @@
 			<referrer name="OnPlayerDeathTimer"/>
 			<referrer name="ShowPlayerKDText"/>
 			<referrer name="UpdatePlayerCircleShift"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="Inv_UpdateRightMenu"/>
+			<referrer name="Inv_UpdatePlaiyerPickupTextDraw"/>
 			<param name="playerid">
 			</param>
 			<param name="text">
@@ -8596,6 +9523,10 @@
 			<referrer name="ShowMatchFinished"/>
 			<referrer name="ShowPlayerKDText"/>
 			<referrer name="UpdatePlayerCircleShift"/>
+			<referrer name="Inv_Show"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="Inv_UpdateRightMenu"/>
+			<referrer name="Inv_UpdatePlaiyerPickupTextDraw"/>
 			<param name="playerid">
 			</param>
 			<param name="text">
@@ -8640,6 +9571,8 @@
 			<referrer name="UpdatePlayerPartyBox"/>
 			<referrer name="ShowMatchFinished"/>
 			<referrer name="UpdatePlayerCircleShift"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="@yH_PlayerConnect9"/>
 			<param name="playerid">
 			</param>
 			<param name="text">
@@ -8658,6 +9591,8 @@
 			<referrer name="@yH_PlayerConnect7"/>
 			<referrer name="UpdatePlayerPartyBox"/>
 			<referrer name="UpdatePlayerCircleShift"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="@yH_PlayerConnect9"/>
 			<param name="playerid">
 			</param>
 			<param name="text">
@@ -9112,7 +10047,11 @@
 			</param>
 		</member>
 		<member name="M:S@@_OnPlayerKeyStateChange" syntax="S@@_OnPlayerKeyStateChange(playerid, newkeys, oldkeys)">
-			<stacksize value="1"/>
+			<attribute name="public"/>
+			<stacksize value="7"/>
+			<dependency name="Inv_Show"/>
+			<dependency name="PlayerJoined"/>
+			<dependency name="PlayerPlaySound"/>
 			<param name="playerid">
 			</param>
 			<param name="newkeys">
@@ -9551,12 +10490,33 @@
 			<dependency name="HTTP"/>
 			<dependency name="print"/>
 		</member>
+		<member name="M:ScrollBar" syntax="ScrollBar(page, totalPages, &amp;y, maxHeight, &amp;height)">
+			<stacksize value="1"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<dependency name="operator/(Float:,_:)"/>
+			<dependency name="operator*(Float:,_:)"/>
+			<dependency name="operator+(Float:,Float:)"/>
+			<param name="page">
+			</param>
+			<param name="totalPages">
+			</param>
+			<param name="y">
+				<paraminfo>Float &amp; </paraminfo>
+			</param>
+			<param name="maxHeight">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="height">
+				<paraminfo>Float &amp; </paraminfo>
+			</param>
+		</member>
 		<member name="M:SelectTextDraw" syntax="SelectTextDraw(playerid, hovercolor)">
 			<attribute name="native"/>
 			<referrer name="@yH_PlayerClickTextDraw4"/>
 			<referrer name="@yH_PlayerClickPlayerTextDraw4"/>
 			<referrer name="@yH_PlayerSpawn4"/>
 			<referrer name="ShowMatchFinished"/>
+			<referrer name="Inv_Show"/>
 			<param name="playerid">
 			</param>
 			<param name="hovercolor">
@@ -9569,6 +10529,9 @@
 			<referrer name="SendMatchMessage"/>
 			<referrer name="cmd_invite"/>
 			<referrer name="MatchingInfoTimer"/>
+			<referrer name="@yH_PlayerClickTextDraw9"/>
+			<referrer name="dialog_CREATED_ITEMS"/>
+			<referrer name="cmd_newitem"/>
 			<param name="playerid">
 			</param>
 			<param name="color">
@@ -9846,8 +10809,6 @@
 			<referrer name="@yH_PlayerSpawn4"/>
 			<referrer name="@yH_PlayerSpawn6"/>
 			<referrer name="cmd_jump"/>
-			<referrer name="cmd_gotowhite"/>
-			<referrer name="cmd_gotoblue"/>
 			<param name="playerid">
 			</param>
 			<param name="x">
@@ -10187,6 +11148,7 @@
 			<attribute name="native"/>
 			<referrer name="MatchingInfoTimer"/>
 			<referrer name="CreateDirection"/>
+			<referrer name="Inv_DropPlayerItem"/>
 			<param name="playerid">
 			</param>
 			<param name="type">
@@ -10348,6 +11310,7 @@
 			<referrer name="@yH_GameModeInit4"/>
 			<referrer name="@yH_GameModeInit7"/>
 			<referrer name="UpdateUI_CurrentPlayer"/>
+			<referrer name="@yH_GameModeInit9"/>
 			<param name="text">
 				<paraminfo>Text </paraminfo>
 			</param>
@@ -10359,6 +11322,8 @@
 			<referrer name="@yH_GameModeInit4"/>
 			<referrer name="@yH_GameModeInit7"/>
 			<referrer name="UpdateUI_CurrentPlayer"/>
+			<referrer name="Inv_UpdateRightMenu"/>
+			<referrer name="@yH_GameModeInit9"/>
 			<param name="text">
 				<paraminfo>Text </paraminfo>
 			</param>
@@ -10372,6 +11337,8 @@
 			<referrer name="@yH_GameModeInit4"/>
 			<referrer name="@yH_GameModeInit7"/>
 			<referrer name="UpdateUI_CurrentPlayer"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="@yH_GameModeInit9"/>
 			<param name="text">
 				<paraminfo>Text </paraminfo>
 			</param>
@@ -10385,6 +11352,7 @@
 			<referrer name="@yH_GameModeInit4"/>
 			<referrer name="@yH_GameModeInit7"/>
 			<referrer name="UpdateUI_CurrentPlayer"/>
+			<referrer name="@yH_GameModeInit9"/>
 			<param name="text">
 				<paraminfo>Text </paraminfo>
 			</param>
@@ -10398,6 +11366,7 @@
 			<referrer name="@yH_GameModeInit4"/>
 			<referrer name="@yH_GameModeInit7"/>
 			<referrer name="UpdateUI_CurrentPlayer"/>
+			<referrer name="@yH_GameModeInit9"/>
 			<param name="x">
 				<paraminfo>Float </paraminfo>
 			</param>
@@ -10412,6 +11381,7 @@
 			<attribute name="native"/>
 			<referrer name="@yH_GameModeExit4"/>
 			<referrer name="@yH_GameModeExit7"/>
+			<referrer name="@yH_GameModeExit9"/>
 			<param name="text">
 				<paraminfo>Text </paraminfo>
 			</param>
@@ -10480,6 +11450,7 @@
 			<referrer name="@yH_GameModeInit4"/>
 			<referrer name="@yH_GameModeInit7"/>
 			<referrer name="UpdateUI_CurrentPlayer"/>
+			<referrer name="@yH_GameModeInit9"/>
 			<param name="text">
 				<paraminfo>Text </paraminfo>
 			</param>
@@ -10494,6 +11465,9 @@
 			<referrer name="UpdatePlayerPartyBox"/>
 			<referrer name="HideMatchFinished"/>
 			<referrer name="HideUI_CurrentPlayer"/>
+			<referrer name="Inv_Hide"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="Inv_UpdateRightMenu"/>
 			<param name="playerid">
 			</param>
 			<param name="text">
@@ -10505,6 +11479,7 @@
 			<referrer name="@yH_GameModeInit4"/>
 			<referrer name="@yH_GameModeInit7"/>
 			<referrer name="UpdateUI_CurrentPlayer"/>
+			<referrer name="@yH_GameModeInit9"/>
 			<param name="text">
 				<paraminfo>Text </paraminfo>
 			</param>
@@ -10520,10 +11495,41 @@
 			<referrer name="@yH_GameModeInit4"/>
 			<referrer name="@yH_GameModeInit7"/>
 			<referrer name="UpdateUI_CurrentPlayer"/>
+			<referrer name="@yH_GameModeInit9"/>
 			<param name="text">
 				<paraminfo>Text </paraminfo>
 			</param>
 			<param name="size">
+			</param>
+		</member>
+		<member name="M:TextDrawSetPreviewModel" syntax="TextDrawSetPreviewModel(text, modelindex)">
+			<attribute name="native"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="Inv_UpdateRightMenu"/>
+			<referrer name="@yH_GameModeInit9"/>
+			<param name="text">
+				<paraminfo>Text </paraminfo>
+			</param>
+			<param name="modelindex">
+			</param>
+		</member>
+		<member name="M:TextDrawSetPreviewRot" syntax="TextDrawSetPreviewRot(text, fRotX, fRotY, fRotZ, fZoom)">
+			<attribute name="native"/>
+			<referrer name="@yH_GameModeInit9"/>
+			<param name="text">
+				<paraminfo>Text </paraminfo>
+			</param>
+			<param name="fRotX">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="fRotY">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="fRotZ">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="fZoom">
+				<paraminfo>Float </paraminfo>
 			</param>
 		</member>
 		<member name="M:TextDrawSetProportional" syntax="TextDrawSetProportional(text, set)">
@@ -10531,6 +11537,7 @@
 			<referrer name="@yH_GameModeInit4"/>
 			<referrer name="@yH_GameModeInit7"/>
 			<referrer name="UpdateUI_CurrentPlayer"/>
+			<referrer name="@yH_GameModeInit9"/>
 			<param name="text">
 				<paraminfo>Text </paraminfo>
 			</param>
@@ -10542,6 +11549,7 @@
 			<referrer name="@yH_GameModeInit4"/>
 			<referrer name="@yH_GameModeInit7"/>
 			<referrer name="UpdateUI_CurrentPlayer"/>
+			<referrer name="@yH_GameModeInit9"/>
 			<param name="text">
 				<paraminfo>Text </paraminfo>
 			</param>
@@ -10553,6 +11561,7 @@
 			<referrer name="@yH_GameModeInit4"/>
 			<referrer name="@yH_GameModeInit7"/>
 			<referrer name="UpdateUI_CurrentPlayer"/>
+			<referrer name="@yH_GameModeInit9"/>
 			<param name="text">
 				<paraminfo>Text </paraminfo>
 			</param>
@@ -10580,6 +11589,9 @@
 			<referrer name="cmd_map"/>
 			<referrer name="UpdatePlayerPartyBox"/>
 			<referrer name="ShowMatchFinished"/>
+			<referrer name="Inv_Show"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="Inv_UpdateRightMenu"/>
 			<param name="playerid">
 			</param>
 			<param name="text">
@@ -10621,6 +11633,7 @@
 			<referrer name="@yH_GameModeInit4"/>
 			<referrer name="@yH_GameModeInit7"/>
 			<referrer name="UpdateUI_CurrentPlayer"/>
+			<referrer name="@yH_GameModeInit9"/>
 			<param name="text">
 				<paraminfo>Text </paraminfo>
 			</param>
@@ -10636,6 +11649,7 @@
 			<referrer name="@yH_GameModeInit4"/>
 			<referrer name="@yH_GameModeInit7"/>
 			<referrer name="UpdateUI_CurrentPlayer"/>
+			<referrer name="@yH_GameModeInit9"/>
 			<param name="text">
 				<paraminfo>Text </paraminfo>
 			</param>
@@ -11191,48 +12205,6 @@
 			<param name="start">
 			</param>
 		</member>
-		<member name="M:cmd_gotoblue" syntax="cmd_gotoblue(playerid)">
-			<attribute name="public"/>
-			<stacksize value="14"/>
-			<dependency name="operator-(Float:)"/>
-			<dependency name="operator+(Float:,Float:)"/>
-			<dependency name="operator*(Float:,Float:)"/>
-			<dependency name="GetAngleZFromPoints"/>
-			<dependency name="GetPlayerPos"/>
-			<dependency name="MapAndreas_FindZ_For2DCoord"/>
-			<dependency name="MatchingInfo"/>
-			<dependency name="PlayerJoined"/>
-			<dependency name="SetPlayerPos"/>
-			<dependency name="degrees"/>
-			<dependency name="floatcos"/>
-			<dependency name="floatsin"/>
-			<dependency name="m_BRad"/>
-			<dependency name="m_BX"/>
-			<dependency name="m_BY"/>
-			<param name="playerid">
-			</param>
-		</member>
-		<member name="M:cmd_gotowhite" syntax="cmd_gotowhite(playerid)">
-			<attribute name="public"/>
-			<stacksize value="14"/>
-			<dependency name="operator-(Float:)"/>
-			<dependency name="operator+(Float:,Float:)"/>
-			<dependency name="operator*(Float:,Float:)"/>
-			<dependency name="GetAngleZFromPoints"/>
-			<dependency name="GetPlayerPos"/>
-			<dependency name="MapAndreas_FindZ_For2DCoord"/>
-			<dependency name="MatchingInfo"/>
-			<dependency name="PlayerJoined"/>
-			<dependency name="SetPlayerPos"/>
-			<dependency name="degrees"/>
-			<dependency name="floatcos"/>
-			<dependency name="floatsin"/>
-			<dependency name="m_WRad"/>
-			<dependency name="m_WX"/>
-			<dependency name="m_WY"/>
-			<param name="playerid">
-			</param>
-		</member>
 		<member name="M:cmd_invite" syntax="cmd_invite(playerid, params[])">
 			<attribute name="public"/>
 			<stacksize value="34"/>
@@ -11323,6 +12295,31 @@
 			<param name="playerid">
 			</param>
 		</member>
+		<member name="M:cmd_newitem" syntax="cmd_newitem(playerid, params[])">
+			<attribute name="public"/>
+			<stacksize value="206"/>
+			<dependency name="operator-(Float:)"/>
+			<dependency name="operator+(Float:,Float:)"/>
+			<dependency name="operator*(Float:,Float:)"/>
+			<dependency name="GetPlayerFacingAngle"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="Inv_AddItem"/>
+			<dependency name="Inv_EditItem"/>
+			<dependency name="IsPlayerAdmin"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="createdItems"/>
+			<dependency name="createdItemsCount"/>
+			<dependency name="degrees"/>
+			<dependency name="floatcos"/>
+			<dependency name="floatsin"/>
+			<dependency name="format"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
 		<member name="M:cmd_partyaccept" syntax="cmd_partyaccept(playerid, params[])">
 			<attribute name="public"/>
 			<stacksize value="9"/>
@@ -11337,6 +12334,119 @@
 			<param name="playerid">
 			</param>
 			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:db_close" syntax="db_close(db)">
+			<attribute name="native"/>
+			<referrer name="Inv_LoadItemsFromDatabase"/>
+			<param name="db">
+				<paraminfo>DB </paraminfo>
+			</param>
+		</member>
+		<member name="M:db_free_result" syntax="db_free_result(dbresult)">
+			<attribute name="native"/>
+			<referrer name="Inv_LoadItemsFromDatabase"/>
+			<param name="dbresult">
+				<paraminfo>DBResult </paraminfo>
+			</param>
+		</member>
+		<member name="M:db_get_field" syntax="db_get_field(dbresult, field, result[], maxlength)">
+			<attribute name="native"/>
+			<referrer name="Inv_LoadItemsFromDatabase"/>
+			<param name="dbresult">
+				<paraminfo>DBResult </paraminfo>
+			</param>
+			<param name="field">
+			</param>
+			<param name="result">
+				<paraminfo> [] </paraminfo>
+			</param>
+			<param name="maxlength">
+			</param>
+		</member>
+		<member name="M:db_get_field_float" syntax="db_get_field_float(result, field)">
+			<tagname value="Float"/>
+			<attribute name="native"/>
+			<referrer name="Inv_LoadItemsFromDatabase"/>
+			<param name="result">
+				<paraminfo>DBResult </paraminfo>
+			</param>
+			<param name="field">
+			</param>
+		</member>
+		<member name="M:db_get_field_int" syntax="db_get_field_int(result, field)">
+			<attribute name="native"/>
+			<referrer name="Inv_LoadItemsFromDatabase"/>
+			<param name="result">
+				<paraminfo>DBResult </paraminfo>
+			</param>
+			<param name="field">
+			</param>
+		</member>
+		<member name="M:db_next_row" syntax="db_next_row(dbresult)">
+			<attribute name="native"/>
+			<referrer name="Inv_LoadItemsFromDatabase"/>
+			<param name="dbresult">
+				<paraminfo>DBResult </paraminfo>
+			</param>
+		</member>
+		<member name="M:db_num_rows" syntax="db_num_rows(dbresult)">
+			<attribute name="native"/>
+			<referrer name="Inv_LoadItemsFromDatabase"/>
+			<param name="dbresult">
+				<paraminfo>DBResult </paraminfo>
+			</param>
+		</member>
+		<member name="M:db_open" syntax="db_open(name[])">
+			<tagname value="DB"/>
+			<attribute name="native"/>
+			<referrer name="Inv_LoadItemsFromDatabase"/>
+			<param name="name">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:db_query" syntax="db_query(db, query[])">
+			<tagname value="DBResult"/>
+			<attribute name="native"/>
+			<referrer name="Inv_LoadItemsFromDatabase"/>
+			<param name="db">
+				<paraminfo>DB </paraminfo>
+			</param>
+			<param name="query">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:dialog_CREATED_ITEMS" syntax="dialog_CREATED_ITEMS(playerid, response, listitem, inputtext[])">
+			<attribute name="public"/>
+			<stacksize value="141"/>
+			<dependency name="operator-(Float:)"/>
+			<dependency name="operator+(Float:,Float:)"/>
+			<dependency name="operator*(Float:,Float:)"/>
+			<dependency name="E_ITEM_MODELID"/>
+			<dependency name="E_ITEM_NAME"/>
+			<dependency name="E_ITEM_ROTX"/>
+			<dependency name="E_ITEM_ROTY"/>
+			<dependency name="E_ITEM_ROTZ"/>
+			<dependency name="E_ITEM_ZPUSH"/>
+			<dependency name="GetPlayerFacingAngle"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="Inv_AddItem"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="createdItems"/>
+			<dependency name="degrees"/>
+			<dependency name="floatcos"/>
+			<dependency name="floatsin"/>
+			<dependency name="format"/>
+			<dependency name="item"/>
+			<dependency name="item"/>
+			<param name="playerid">
+			</param>
+			<param name="response">
+			</param>
+			<param name="listitem">
+			</param>
+			<param name="inputtext">
 				<paraminfo> [] </paraminfo>
 			</param>
 		</member>
@@ -11522,9 +12632,10 @@
 			<referrer name="CA_GetRoomCenter"/>
 			<referrer name="MatchingInfoTimer"/>
 			<referrer name="OnPlayerDeathTimer"/>
-			<referrer name="cmd_gotowhite"/>
-			<referrer name="cmd_gotoblue"/>
 			<referrer name="CreateDirection"/>
+			<referrer name="Inv_DropPlayerItem"/>
+			<referrer name="dialog_CREATED_ITEMS"/>
+			<referrer name="cmd_newitem"/>
 			<param name="value">
 				<paraminfo>Float </paraminfo>
 			</param>
@@ -11595,9 +12706,10 @@
 			<referrer name="CA_GetRoomCenter"/>
 			<referrer name="MatchingInfoTimer"/>
 			<referrer name="OnPlayerDeathTimer"/>
-			<referrer name="cmd_gotowhite"/>
-			<referrer name="cmd_gotoblue"/>
 			<referrer name="CreateDirection"/>
+			<referrer name="Inv_DropPlayerItem"/>
+			<referrer name="dialog_CREATED_ITEMS"/>
+			<referrer name="cmd_newitem"/>
 			<param name="value">
 				<paraminfo>Float </paraminfo>
 			</param>
@@ -11664,6 +12776,10 @@
 			<referrer name="ShowPlayerKDText"/>
 			<referrer name="UpdateUI_CurrentPlayer"/>
 			<referrer name="UpdatePlayerCircleShift"/>
+			<referrer name="Inv_AddItem"/>
+			<referrer name="Inv_UpdatePlaiyerPickupTextDraw"/>
+			<referrer name="dialog_CREATED_ITEMS"/>
+			<referrer name="cmd_newitem"/>
 			<param name="output">
 				<paraminfo> [] </paraminfo>
 			</param>
@@ -11995,6 +13111,7 @@
 			<attribute name="native"/>
 			<referrer name="g_mysql_Init"/>
 			<referrer name="cmd_invite"/>
+			<referrer name="cmd_newitem"/>
 			<param name="data">
 				<paraminfo> [] </paraminfo>
 			</param>
@@ -12033,6 +13150,9 @@
 			<referrer name="Malloc_SetS"/>
 			<referrer name="Malloc_SetVAS"/>
 			<referrer name="S@@_OnDialogResponse"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="Inv_UpdateRightMenu"/>
+			<referrer name="@yH_PlayerClickTextDraw9"/>
 			<param name="dest">
 				<paraminfo> [] </paraminfo>
 			</param>
@@ -12099,6 +13219,8 @@
 			<referrer name="_Timer_S"/>
 			<referrer name="Dialog_Open"/>
 			<referrer name="S@@_OnDialogResponse"/>
+			<referrer name="Inv_UpdateLeftMenu"/>
+			<referrer name="Inv_UpdateRightMenu"/>
 			<param name="string">
 				<paraminfo> [] </paraminfo>
 			</param>
